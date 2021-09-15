@@ -1,124 +1,122 @@
-
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
 :root {
-  --background: rgba(245, 235, 220, 1);
-  --body-background: rgba(246, 246, 246, 1);
+    --background: rgba(245, 235, 220, 1);
+    --body-background: rgba(246, 246, 246, 1);
 }
 
 *, *::before, *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-	margin: 0;
-	background:var(--body-background);
-	font-family: 'Work Sans', sans-serif;
-	font-weight: 400;
+    margin: 0;
+    background: var(--body-background);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
 }
-
 
 
 /* navigation styles start here */
 
 header {
-  background: var(--background);
-  text-align: center;
-  position: fixed;
-  z-index: 999;
-  width: 100%;
+    background: var(--background);
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
 }
 
 /* changed this from the tutorial video to
    allow it to gain focus, making it tabbable */
 .nav-toggle {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
 }
 
 .nav-toggle:focus ~ .nav-toggle-label {
-  outline: 3px solid rgba(black, .75);
+    outline: 3px solid rgba(black, .75);
 }
 
 .nav-toggle-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-left: 1em;
-  height: 100%;
-  display: flex;
-  align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .nav-toggle-label span,
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
-  display: block;
-  background: orange;
-  height: 2px;
-  width: 2em;
-  border-radius: 2px;
-  position: relative;
+    display: block;
+    background: orange;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
 }
 
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
-  content: '';
-  position: absolute;
+    content: '';
+    position: absolute;
 }
 
 .nav-toggle-label span::before {
-  bottom: 7px;
+    bottom: 7px;
 }
 
 .nav-toggle-label span::after {
-  top: 7px;
+    top: 7px;
 }
 
 nav {
-  position: absolute;
-  text-align: left;
-  top: 100%;
-  left: 0;
-  background: var(--background);
-  width: 100%;
-  transform: scale(1, 0);
-  transform-origin: top;
-  transition: transform 400ms ease-in-out;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
 }
 
 nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 nav li {
-  margin-bottom: 1em;
-  margin-left: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
 }
 
 nav a {
-  color: black;
-  text-decoration: none;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 150ms ease-in-out;
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
 }
 
 nav a:hover {
-  color: #000;
+    color: #000;
 }
 
 .nav-toggle:checked ~ nav {
-  transform: scale(1,1);
+    transform: scale(1, 1);
 }
 
 .nav-toggle:checked ~ nav a {
-  opacity: 1;
-  transition: opacity 250ms ease-in-out 250ms;
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
 }
 
 /* navbar at the bottom of the page, hiddem
@@ -126,78 +124,119 @@ nav a:hover {
     display: none;
 }*/
 
-/* Place the navbar at the bottom of the page, and make it stick */
+/* navbar at the bottom of the page, Display none:
+removes an element from a document and hides it from view.
 #mobile_footer_nav {
     display: none;
+}*/
+
+/* Place the navbar at the bottom of the page, and make it stick */
+#mobile_footer_nav {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+#mobile_footer_nav a {
+    position: center;
+    text-decoration: none;
+    font-size: 17px;
+    color: #f7f7f7;
+}
+
+.nav_button {
+    position: center;
+    background-color: rgba(225, 135, 50, 100); /* Green */
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    /*display: inline-block;*/
+    font-size: 16px;
+}
+
+.order_link {
+    background-color: rgba(214, 35, 0, 100);
+    border-radius: 25px;
+    color: #f7f7f7;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Bookman Old Style", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 4px 0 rgba(200, 117, 38, 100);
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 
-
-
 @media screen and (min-width: 500px) {
-  .nav-toggle-label {
-    display: none;
-  }
+    .nav-toggle-label {
+        display: none;
+    }
 
-  header {
-    display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
-  }
-  
-  .logo {
-    grid-column: 3 / 3;
-  }
-  
-  nav {
-    
-    /* the following lines are not from my video, but add Edge support */
-    position: relative;
-    text-align: left;
-    transition: none;
-    transform: scale(1,1);
-    background: none;
-    top: initial;
-    left: initial;
-    /* end Edge support stuff */
-    
-    grid-column: 1 / 4;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-  }
-  
-  nav ul {
-    display: flex;
-  }
-  
-  nav li {
-    margin-left: 3em;
-    margin-bottom: 0;
-  }
-  
-  nav a {
-    opacity: 1;
-    position: relative;
-  }
-  
-  nav a::before {
-    content: '';
-    display: block;
-    height: 5px;
-    background: black;
-    position: absolute;
-    top: -.75em;
-    left: 0;
-    right: 0;
-    transform: scale(0, 1);
-    transition: transform ease-in-out 250ms;
-  }
-  
-  nav a:hover::before {
-    transform: scale(1,1);
-  }
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
 
-    /* Place the navbar at the bottom of the page, and make it stick */
+    .logo {
+        grid-column: 3 / 3;
+    }
+
+    nav {
+        /* the following lines are not from my video, but add Edge support */
+        position: relative;
+        text-align: left;
+        transition: none;
+        transform: scale(1, 1);
+        background: none;
+        top: initial;
+        left: initial;
+        /* end Edge support stuff */
+
+        grid-column: 1 / 4;
+        display: flex;
+        justify-content: left;
+        align-items: left;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: black;
+        position: absolute;
+        top: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        transform: scale(1, 1);
+    }
+/*
+    Place the navbar at the bottom of the page, and make it stick
     #mobile_footer_nav {
         overflow: hidden;
         position: fixed;
@@ -205,7 +244,7 @@ nav a:hover {
         width: 100%;
     }
 
-    /* Style the links inside the navigation bar */
+    Style the links inside the navigation bar
     #mobile_footer_nav a {
         position: center;
         text-decoration: none;
@@ -215,7 +254,7 @@ nav a:hover {
 
     .nav_button {
         position: center;
-        background-color: rgba(225,135,50,100); /* Green */
+        background-color: rgba(225, 135, 50, 100); /* Green */
         border: none;
         padding: 15px 32px;
         text-align: center;
@@ -225,26 +264,21 @@ nav a:hover {
     }
 
     .order_link {
-        background-color:rgba(214,35,0,100);
+        background-color: rgba(214, 35, 0, 100);
         border-radius: 25px;
-        color:#f7f7f7 ;
+        color: #f7f7f7;
         padding: 15px 32px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-family: "Bookman Old Style",sans-serif;
+        font-family: "Bookman Old Style", sans-serif;
         font-size: 20px;
         font-weight: bold;
         box-shadow: 0 4px 4px 0 rgba(200, 117, 38, 100);
-
         margin: 4px 2px;
         cursor: pointer;
-    }
-
+    }*/
 }
-
-
-
 
 
 /* *,

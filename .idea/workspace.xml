@@ -24,6 +24,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/css/styles.css" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -38,7 +39,7 @@
       <workItem from="1631699504210" duration="597000" />
       <workItem from="1631700106755" duration="571000" />
       <workItem from="1631710610319" duration="20000" />
-      <workItem from="1631710647444" duration="3751000" />
+      <workItem from="1631710647444" duration="5921000" />
     </task>
     <servers />
   </component>

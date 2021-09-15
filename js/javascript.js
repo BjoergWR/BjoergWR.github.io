@@ -16,5 +16,5 @@ function start(){
     //widthHeight();
 }
 
-window.addEventListener("load", start):
+window.addEventListener("load", start);
 

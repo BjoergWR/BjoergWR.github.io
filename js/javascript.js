@@ -17,7 +17,7 @@ function widthHeight(){
 
 function start(){
     getResolution();
-    widthHeight();
+    //widthHeight();
 }
 
 window.addEventListener("load", start);

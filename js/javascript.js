@@ -16,7 +16,7 @@ function widthHeight(){
 
 
 function start(){
-    //getResolution();
+    getResolution();
     widthHeight();
 }
 

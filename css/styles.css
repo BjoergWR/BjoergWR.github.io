@@ -121,10 +121,18 @@ nav a:hover {
   transition: opacity 250ms ease-in-out 250ms;
 }
 
-/* navbar at the bottom of the page, hiddem */
+/* navbar at the bottom of the page, hiddem
 .mobile_footer_nav {
     display: none;
+}*/
+
+/* Place the navbar at the bottom of the page, and make it stick */
+#mobile_footer_nav {
+    display: none;
 }
+
+
+
 
 @media screen and (min-width: 500px) {
   .nav-toggle-label {
@@ -188,10 +196,9 @@ nav a:hover {
   nav a:hover::before {
     transform: scale(1,1);
   }
-	
-/* Place the navbar at the bottom of the page, and make it stick */
-    .mobile_footer_nav {
-        background-color: #333;
+
+    /* Place the navbar at the bottom of the page, and make it stick */
+    #mobile_footer_nav {
         overflow: hidden;
         position: fixed;
         bottom: 0;
@@ -199,27 +206,41 @@ nav a:hover {
     }
 
     /* Style the links inside the navigation bar */
-    .mobile_footer_nav a {
+    #mobile_footer_nav a {
         position: center;
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
         text-decoration: none;
         font-size: 17px;
+        color: #f7f7f7;
     }
 
-    /* Change the color of links on hover */
-    .mobile_footer_nav a:hover {
-        background-color: #ddd;
-        color: black;
+    .nav_button {
+        position: center;
+        background-color: rgba(225,135,50,100); /* Green */
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        /*display: inline-block;*/
+        font-size: 16px;
     }
 
-    /* Add a color to the active/current link */
-    .mobile_footer_nav a.active {
-        background-color: #04AA6D;
-        color: white;
-    }	
+    .order_link {
+        background-color:rgba(214,35,0,100);
+        border-radius: 25px;
+        color:#f7f7f7 ;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-family: "Bookman Old Style",sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0 4px 4px 0 rgba(200, 117, 38, 100);
+
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
 }
 
 

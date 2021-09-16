@@ -105,11 +105,11 @@ a {
 } */
 
 .nav-link{
-    
+    text-transform: uppercase;
     font-size: 1.2em;
     font-weight: 600;
     color: black;
-    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 10px rgba(250, 247, 247, 0.3);
     border-radius: 10%;
     padding: 2px 2px 2px 2px
 }
@@ -158,13 +158,18 @@ main > section {
     margin-bottom: 150px; 
 }
 
-.foodimg {
-    width: 50%;
-    height: 20%;
+.animation .foodimg {
+    display: flex;
+    width: 40%;
+    /* height: 10%; */
     left: 0;
     right: 0;
-    margin:auto;
-    
+    margin: auto;
+
+}
+#img1,#img2,#img3,#img4 {
+    height: 100px;
+    width: 100px;
 }
 
 /* nav {
@@ -229,6 +234,7 @@ removes an element from a document and hides it from view.
     position: fixed;
     bottom: 0;
     width: 100%;
+    margin-bottom: 200px;
 }
 
 /* Style the links inside the navigation bar */
@@ -413,27 +419,45 @@ removes an element from a document and hides it from view.
 
 footer {
     background: var(--background);
-    padding: 3em 1em;
+    padding: 1em 1em;
     color:black;
     display: flex;
-    justify-content: center;
-    gap: 5em;
+    justify-content: space-evenly;
+    flex-basis: 100%;
+    gap: 2em;
     margin-top: 3em;
 }
+
+footer div {
+    border: 1px solid red;
+    padding-top: 1em;
+    text-align: center;
+    flex-basis: 100%;
+    
+}
+
 footer a {
+    
+    text-transform: uppercase;
     color: black;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+.footer-nav li {
+    /* border: 1px solid green; */
+    padding-bottom: 0.1em;
+    text-align: left;
+    list-style: circle;
+    
+} 
+
+.footer-nav li a {
+    padding: 1em;
 }
 
-.footer-nav {
-    display: flex;
-    list-style: none;
-}
-
-.footer-nav a {
-    display: inline;
-    padding: 0.75em;
-    text-decoration: none;
+.footerdiv2 {
+    
+    display: inline-block;
 }
 
 .footer-nav a:hover {
@@ -441,12 +465,12 @@ footer a {
 }
 
 .footer-social {
-    display: flex;
+    /* display: flex; */
     list-style: none;
 }
 
 .social-link {
-    display: inline-block;
+    /* display: inline-block; */
     margin-bottom: 5px;
 }
 

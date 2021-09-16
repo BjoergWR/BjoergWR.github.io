@@ -50,7 +50,7 @@ a {
     border: 1px solid gray
 }
 
-.navbar, .divlogo, .divcart {
+.navbar, .divlogo, .button_nav_top {
     
     /* border: 1px solid black; */
     display: flex;
@@ -187,6 +187,7 @@ main > section {
     font-weight: 500;
     cursor:pointer;
     color: var(--red);
+    margin: 1em;
 }
 .button_cart:hover{
     background: rgba(214, 35, 0, 20);
@@ -207,11 +208,8 @@ main > section {
 .button_icon{
     font-size: 1.5em;
 }
-.button_nav_top{
-    position: absolute;
-    top: 10%;
-    right: 0;
-}
+
+
 
 /* nav {
     position: absolute;

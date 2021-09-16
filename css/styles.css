@@ -5,6 +5,7 @@
     --body-background: rgba(246, 246, 246, 1);
     --red: rgba(214, 35, 0, 1);
     --orange: rgba(200, 117, 38, 1);
+    --dart-orange: rgba(225, 135, 50, 100);
     --broun: rgba(94,52,37,1);
 }
 
@@ -38,14 +39,10 @@ a {
     flex-basis: 100%;
     background-color: var(--background);
     /* border: 1px solid blue; */
-    border-bottom: 1px solid #E2E8F0;
     width: 100%;
     top: 0;
     justify-content: space-evenly;
     /* scroll-margin-top: 50em; */
-    border-radius: 0 0 10px 10px;
-    /* margin-top: 0px; */
-    border: 1px solid gray
 }
 
 .navbar, .divlogo, .button_nav_top {
@@ -77,7 +74,7 @@ a {
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: #101010;
+    background-color: var(--broun);
 }
 
 .nav-menu {
@@ -93,26 +90,28 @@ a {
 }
 
 
-
 .nav-link{
-    text-transform: uppercase;
     font-size: 1.2em;
     font-weight: 600;
-    color: black;
+    font-family: "Bookman Old Style", sans-serif;
+    color: var(--broun);
     box-shadow: 0px 0px 10px rgba(250, 247, 247, 0.3);
     border-radius: 10%;
     padding: 2px 2px 2px 2px
+
 }
 
 
 .nav-link:hover{
-    color: orange;
+    color:  var(--red);
+}
+.nav-link:active{
+    color:  var(--dart-orange);
 }
 
 .nav-logo {
     font-size: 1.1rem;
     font-weight: 500;
-    color: #482ff7;
 }
 div > img {
     width: 100%;
@@ -157,8 +156,9 @@ main > section {
     color: var(--red);
     margin: 1em;
 }
+
 .button_cart:hover{
-    background: rgba(214, 35, 0, 20);
+    background: var(--red);
     color: #f7f7f7;
 }
 .button_cart:active{
@@ -208,9 +208,11 @@ removes an element from a document and hides it from view.
     color: #f7f7f7;
 }
 
+
+
 .nav_button {
     position: center;
-    background-color: rgba(225, 135, 50, 100);
+    background-color: var(--dart-orange);
     border: none;
     padding: 15px 32px;
     text-align: center;
@@ -220,7 +222,7 @@ removes an element from a document and hides it from view.
 }
 
 .order_link {
-    background-color: rgba(214, 35, 0, 100);
+    background-color: var(--red);
     border-radius: 25px;
     color: #f7f7f7;
     padding: 15px 32px;
@@ -230,7 +232,7 @@ removes an element from a document and hides it from view.
     font-family: "Bookman Old Style", sans-serif;
     font-size: 20px;
     font-weight: bold;
-    box-shadow: 0 4px 4px 0 rgba(200, 117, 38, 100);
+    box-shadow: 0 4px 4px 0 var(--orange);
     margin: 4px 2px;
     cursor: pointer;
 }
@@ -306,7 +308,7 @@ removes an element from a document and hides it from view.
 
     .nav_button {
         position: center;
-        background-color: rgba(225, 135, 50, 100); /* Green */
+        background-color: var(--dart-orange); /* Green */
         border: none;
         padding: 15px 32px;
         text-align: center;
@@ -316,7 +318,7 @@ removes an element from a document and hides it from view.
     }
 
     .order_link {
-        background-color: rgba(214, 35, 0, 100);
+        background-color: var(--red);
         border-radius: 25px;
         color: #f7f7f7;
         padding: 15px 32px;
@@ -326,7 +328,7 @@ removes an element from a document and hides it from view.
         font-family: "Bookman Old Style", sans-serif;
         font-size: 20px;
         font-weight: bold;
-        box-shadow: 0 4px 4px 0 rgba(200, 117, 38, 100);
+        box-shadow: 0 4px 4px 0 var(--orange);
         margin: 4px 2px;
         cursor: pointer;
     }
@@ -372,11 +374,9 @@ footer a {
     padding: 1em;
 }
 
-
-
 .footer-nav a:hover {
     text-decoration: underline;
-    color: orange;
+    color: var(--orange);
 }
 
 .footer-social {

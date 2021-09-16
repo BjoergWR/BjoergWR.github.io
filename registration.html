@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <title>Burgarastova</title>
+  </head>
+  <body>
+
+   <header class="header">
+      
+      <nav class="navbar">
+          
+              <div class="hamburger">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+              </div>
+
+              <div>
+                  <ul class="nav-menu">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">Heim</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">Menu</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">Kontakt</a>
+                      </li>
+                      <!-- <li class="nav-item">
+                      <a href="#" class="nav-link"></a>
+                  </li> -->
+                  </ul>
+              </div>
+      </nav>
+     
+      <div class="divlogo">
+          <a class="image" href="index.html">
+              <img src="img/logo.png" alt="logo Burgarastova" class="logo">
+          </a>
+      </div>
+      <div class='buttons_nav_top'>
+          <!--<a href="#" class="button_order">Order</a>-->
+          <button class="button_cart">
+              <span class="button_text">0.00kr</span>
+              <span class="button_icon"><ion-icon name="bag-handle-outline"></ion-icon></span>
+          </button>
+      </div>
+
+  </header>
+
+    <main>
+      <div class="kontakt">
+        <form method="get" action="index.html">
+          <p>
+            <label for="navn">Navn: </label>
+            <input type="text" name="name" id="navn" placeholder="olfert" required>
+          </p>
+          <p>
+          <label for="email">Email: </label>
+          <input type="text" name="email" id="email" placeholder="burgarin@burgarstova.com" required>
+        </p>
+          <p>
+          <label for="phone">Nummar: </label>
+          <input type="tel" name="phone" id="telefon" placeholder="+298 505050" required>
+        </p>
+          <p>
+          <label for="býur">Býur: </label>
+          <input type="text" name="býur" id="býur" placeholder="Tórshavn" required>
+        </p>
+          <p>
+          <label for="gøta">Gøta: </label>
+          <input type="text" name="gøta" id="gøta" placeholder="Tórsgøta" required>
+        </p>
+        <p>
+          <input type="submit" name="submit" class="button1">
+          <input type="reset" name="reset" class="button2">
+        </p>
+        </form>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footerdiv1">
+      <ul class="footer-nav">
+          <li><a href="#">Heim</a></li>
+          <li><a href="#">Um Okkum</a></li>
+          <li><a href="#">Kontakt</a></li>
+          <li><a href="#">Finn Okkum</a></li>
+      </ul>
+  </div>
+  <div class="footerdiv2">
+      <ul class="footer-social">
+          <li>
+              <a class="social-link" href="https://facebook.com">
+                  <img class="social-icon" src="img/pngwing.com.png" alt="" aria-label="facebook" />
+              </a>
+          </li>
+          <li>
+              <a class="social-link" href="https://instagram.com">
+                  <img class="social-icon" src="img/insta.png" alt="" aria-label="instagram" />
+              </a>
+          </li>
+      </ul>
+  </div>
+  </footer>
+  </body>
+</html>

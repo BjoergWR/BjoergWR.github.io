@@ -218,50 +218,6 @@ main > section {
     right: 0;
 }
 
-/* nav {
-    position: absolute;
-    text-align: left;
-    top: 100%;
-    left: 0;
-    background: var(--background);
-    width: 100%;
-    transform: scale(1, 0);
-    transform-origin: top;
-    transition: transform 400ms ease-in-out;
-} */
-
-/* nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-nav li {
-    margin-bottom: 1em;
-    margin-left: 1em;
-}
-
-nav a {
-    color: black;
-    text-decoration: none;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    opacity: 0;
-    transition: opacity 150ms ease-in-out;
-} */
-
-/* nav a:hover {
-    color: #000;
-}
-
-.nav-toggle:checked ~ nav {
-    transform: scale(1, 1);
-}
-
-.nav-toggle:checked ~ nav a {
-    opacity: 1;
-    transition: opacity 250ms ease-in-out 250ms;
-} */
 
 /* navbar at the bottom of the page, hiddem
 .mobile_footer_nav {
@@ -280,7 +236,7 @@ removes an element from a document and hides it from view.
     position: fixed;
     bottom: 0;
     width: 100%;
-    margin-bottom: 200px;
+
 }
 
 /* Style the links inside the navigation bar */
@@ -320,9 +276,7 @@ removes an element from a document and hides it from view.
 
 
 @media only screen and (max-width: 750px) {
-    /* .nav-toggle-label {
-        display: none;
-    } */
+  
 
     .header {
         position: fixed;
@@ -331,10 +285,6 @@ removes an element from a document and hides it from view.
     .navbar {
         width: 100%;
     }
-
-    /* .logo {
-        grid-column: 3 / 3;
-    } */
 
     .nav-menu {
         
@@ -350,21 +300,6 @@ removes an element from a document and hides it from view.
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     }
 
-    /* nav {
-        position: relative;
-        text-align: left;
-        transition: none;
-        transform: scale(1, 1);
-        background: none;
-        top: initial;
-        left: initial;
-
-        grid-column: 1 / 4;
-        display: flex;
-        justify-content: left;
-        align-items: left;
-    } */
-
     .nav-menu.active {
         left: 0;
     }
@@ -378,33 +313,6 @@ removes an element from a document and hides it from view.
         display: block;
         cursor: pointer;
     }
-
-    /* nav ul {
-        display: flex;
-    }
-
-    nav li {
-        margin-left: 3em;
-        margin-bottom: 0;
-    }
-
-    nav a {
-        opacity: 1;
-        position: relative;
-    } */
-
-    /* nav a::before {
-        content: '';
-        display: block;
-        height: 5px;
-        background: black;
-        position: absolute;
-        top: -.75em;
-        left: 0;
-        right: 0;
-        transform: scale(0, 1);
-        transition: transform ease-in-out 250ms;
-    } */
 
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
@@ -465,20 +373,23 @@ removes an element from a document and hides it from view.
 
 footer {
     background: var(--background);
-    padding: 1em 1em;
+    padding: 1em 1em 7em 1em;
     color:black;
     display: flex;
     justify-content: space-evenly;
     flex-basis: 100%;
     gap: 2em;
     margin-top: 3em;
+    
+    
 }
 
 footer div {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding-top: 1em;
     text-align: center;
-    flex-basis: 100%;
+    /* flex-basis: 100%; */
+    
     
 }
 
@@ -490,10 +401,9 @@ footer a {
     font-weight: 400;
 }
 .footer-nav li {
-    /* border: 1px solid green; */
     padding-bottom: 0.1em;
     text-align: left;
-    list-style: circle;
+    list-style: disc;
     
 } 
 
@@ -501,131 +411,21 @@ footer a {
     padding: 1em;
 }
 
-.footerdiv2 {
-    
-    display: inline-block;
-}
+
 
 .footer-nav a:hover {
     text-decoration: underline;
+    color: orange;
 }
 
 .footer-social {
-    /* display: flex; */
     list-style: none;
 }
 
 .social-link {
-    /* display: inline-block; */
     margin-bottom: 5px;
 }
 
 .social-icon {
     max-width: 50px;
 }
-
-
-/* *,
-*::before,
-*::after {
- box-sizing: inherit;
-}
-
-:root {
-    --background: rgba(245, 235, 220, 1);
-
-}
-
-body {
-    margin: 0;
-    background-color: rgba(246, 246, 246, 1);
-}
-
-header {
-    width: 100%;
-    background-color: rgba(245, 235, 220, 1);
-    padding-bottom: 1.1em;
-}
-
-header img{
-
-    height: 100px;
-    text-align: center;
-    
-}
-
-header a {
-    text-align: center;
-
-}
-nav {
-    text-align: center;
-}
-nav a {
-    text-decoration: none;
-}
-
-
-nav ul {
-    background-color: rgba(245, 235, 220, 1);
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    justify-content: space-around;
-}
-
-.navbar {
-    background-color: rgba(245, 235, 220, 1);
-    margin: 0;
-    padding: 0;
-    justify-content: space-around;
-}
-
-header img{
-    height: 100px;
-    border-radius: 1.9em;
-    text-align: center;
-}
-.nav-link{
-    font-weight: bolder;
-    font-family: "Bookman Old Style",sans-serif;
-    font-size: 18px;
-    color: rgba(94, 52, 37, 1);
-}
-
-.animation img {
-    display: block;
-    width: 20%;
-    
-}
-
-.navbar a:hover {
-    color: rgba(214, 35, 0, 1);
-}
-.active {
-    text-decoration: underline;
-    color: rgba(214, 35, 0, 1);
-}
-
-
-.animation {
-    background-color: #f7f7f7;
-    max-height: 300px;
-}
-.tree_burger{
-    height: 200px;
-    padding: 12px;
-}
-.one_burger{
-    height: 200px;
-    padding: 12px;
-}
-.french_fries{
-    height: 200px;
-    padding: 12px;
-}
-.soda{
-    height: 200px;
-    padding: 12px;
-} */

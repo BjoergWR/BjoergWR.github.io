@@ -1,38 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--This gives the browser instructions on how to control the page's dimensions and scaling.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--This gives the browser instructions on how to control the page's dimensions and scaling.-->
     <link rel="stylesheet" href="css/styles.css">
-    <script src = "js/javascript.js"></script>
+    <script src="js/hamburger.js" defer></script>
+    <script src="js/javascript.js"></script>
     <title>Title</title>
 </head>
+
 <body>
-    <header>
-        <h1 class="logo"><a href="index.html"><img src="img/logo.png"  alt="logo Burgarastova" class="logo"></a></h1>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <nav>
-          <ul>
-            <li><a href="#">Heim</a></li>
-            <li><a href="#">vision</a></li>
-            <li><a href="#">kontakt</a></li>
-            <li><a href="#">order</a></li>
-          </ul>
+    <header class="header">
+        <nav class="navbar">
+            <div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Heim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">kontakt</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                        <a href="#" class="nav-link"></a>
+                    </li> -->
+                    </ul>
+                </div>
         </nav>
-        <label for="nav-toggle" class="nav-toggle-label">
-          <span></span>
-        </label>
-      </header>
+        </div>
+        <div class="divlogo">
+            <a class="image" href="index.html">
+                <img src="img/logo.png" alt="logo Burgarastova" class="logo">
+            </a>
+        </div>
+        <div class="divcart"><a href="#" class="nav-logo">cart.</a></div>
 
-<div class="animation">
-    <img src="img/tree_burger.png" class="tree_burger" alt="tree burgers">
-    <img src="img/burger_animation.png" alt="one burger" class="one_burger">
-    <img src="img/french_fries.png" alt="french fries" class="french_fries">
-    <img src="img/coca_cola_animation_2.png" alt="Coca cola in glass" class="soda">
-</div>
-<div id="mobile_footer_nav">
-    <div class="nav_button"><a href="#" class="order_link">Order Now</a></div>
+    </header>
 
-</div>
+    <main>
+        <section class="burgarir">
+
+            <div class="animation">
+                <img src="img/tree_burger.png" class="tree_burger" alt="tree burgers">
+                <img src="img/burger_animation.png" alt="one burger" class="one_burger">
+                <img src="img/french_fries.png" alt="french fries" class="french_fries">
+                <img src="img/coca_cola_animation_2.png" alt="Coca cola in glass" class="soda">
+            </div>
+        </section>
+    </main>
+    <div id="mobile_footer_nav">
+        <div class="nav_button"><a href="#" class="order_link">Order Now</a></div>
+
+    </div>
+
+    <footer>
+        <ul class="footer-nav">
+            <li><a href="#">Heim</a></li>
+            <li><a href="#">Um Okkum</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Finn Okkum</a></li>
+        </ul>
+
+        <ul class="footer-social">
+            <li>
+                <a class="social-link" href="https://facebook.com">
+                    <img class="social-icon" src="img/pngwing.com.png" alt="" aria-label="facebook" />
+                </a>
+            </li>
+            <li>
+                <a class="social-link" href="https://instagram.com">
+                    <img class="social-icon" src="img/insta.png" alt="" aria-label="instagram" />
+                </a>
+            </li>
+        </ul>
+    </footer>
 </body>
+
 </html>

@@ -6,40 +6,95 @@
 }
 
 *, *::before, *::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
+    position: relative;
+    /* margin: 0; */
     background: var(--body-background);
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
+    /* font-family: 'Work Sans', sans-serif;
+    font-weight: 400; */
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 
 /* navigation styles start here */
 
-header {
-    background: var(--background);
-    text-align: center;
+.header{
     position: fixed;
-    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    background-color: var(--background);
+    /* border: 1px solid blue; */
+    border-bottom: 1px solid #E2E8F0;
     width: 100%;
+    top: 0;
+    justify-content: space-evenly;
+    /* scroll-margin-top: 50em; */
+    border-radius: 10px 90px / 130px;;
+    /* margin-top: 0px; */
+    border: 1px solid gray
+}
+
+.navbar, .divlogo, .divcart {
+    
+    /* border: 1px solid black; */
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    /* padding: 1em 1em; */
 }
 
 /* changed this from the tutorial video to
    allow it to gain focus, making it tabbable */
-.nav-toggle {
+/* .nav-toggle {
     position: absolute !important;
     top: -9999px !important;
     left: -9999px !important;
+} */
+
+.hamburger {
+    display: none;
 }
 
-.nav-toggle:focus ~ .nav-toggle-label {
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    /* border: 1px solid blue; */
+}
+
+/* .nav-toggle:focus ~ .nav-toggle-label {
     outline: 3px solid rgba(black, .75);
+} */
+
+.nav-item {
+    margin: 1em;
 }
 
-.nav-toggle-label {
+/* .nav-toggle-label {
     position: absolute;
     top: 0;
     left: 0;
@@ -47,9 +102,19 @@ header {
     height: 100%;
     display: flex;
     align-items: center;
+} */
+
+.nav-link{
+    
+    font-size: 1.2em;
+    font-weight: 600;
+    color: black;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.3);
+    border-radius: 10%;
+    padding: 2px 2px 2px 2px
 }
 
-.nav-toggle-label span,
+/* .nav-toggle-label span,
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
     display: block;
@@ -58,9 +123,9 @@ header {
     width: 2em;
     border-radius: 2px;
     position: relative;
-}
+} */
 
-.nav-toggle-label span::before,
+/* .nav-toggle-label span::before,
 .nav-toggle-label span::after {
     content: '';
     position: absolute;
@@ -72,9 +137,30 @@ header {
 
 .nav-toggle-label span::after {
     top: 7px;
+} */
+
+.nav-link:hover{
+    color: orange;
 }
 
-nav {
+.nav-logo {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #482ff7;
+}
+div > img {
+    width: 100%;
+    display: block;
+    /* flex-basis: 100%; */
+}
+main > section {
+    margin-top: 110px;
+    margin-bottom: 150px;
+    
+    
+}
+
+/* nav {
     position: absolute;
     text-align: left;
     top: 100%;
@@ -84,9 +170,9 @@ nav {
     transform: scale(1, 0);
     transform-origin: top;
     transition: transform 400ms ease-in-out;
-}
+} */
 
-nav ul {
+/* nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -104,9 +190,9 @@ nav a {
     text-transform: uppercase;
     opacity: 0;
     transition: opacity 150ms ease-in-out;
-}
+} */
 
-nav a:hover {
+/* nav a:hover {
     color: #000;
 }
 
@@ -117,7 +203,7 @@ nav a:hover {
 .nav-toggle:checked ~ nav a {
     opacity: 1;
     transition: opacity 250ms ease-in-out 250ms;
-}
+} */
 
 /* navbar at the bottom of the page, hiddem
 .mobile_footer_nav {
@@ -174,22 +260,39 @@ removes an element from a document and hides it from view.
 }
 
 
-@media screen and (min-width: 500px) {
-    .nav-toggle-label {
+@media only screen and (max-width: 750px) {
+    /* .nav-toggle-label {
         display: none;
+    } */
+
+    .header {
+        position: fixed;
     }
 
-    header {
-        display: grid;
-        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    .navbar {
+        width: 100%;
     }
 
-    .logo {
+    /* .logo {
         grid-column: 3 / 3;
+    } */
+
+    .nav-menu {
+        
+        position: fixed;
+        left: -100%;
+        top: 10rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
     }
 
-    nav {
-        /* the following lines are not from my video, but add Edge support */
+    /* nav {
         position: relative;
         text-align: left;
         transition: none;
@@ -197,15 +300,28 @@ removes an element from a document and hides it from view.
         background: none;
         top: initial;
         left: initial;
-        /* end Edge support stuff */
 
         grid-column: 1 / 4;
         display: flex;
         justify-content: left;
         align-items: left;
+    } */
+
+    .nav-menu.active {
+        left: 0;
     }
 
-    nav ul {
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+   
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* nav ul {
         display: flex;
     }
 
@@ -217,9 +333,9 @@ removes an element from a document and hides it from view.
     nav a {
         opacity: 1;
         position: relative;
-    }
+    } */
 
-    nav a::before {
+    /* nav a::before {
         content: '';
         display: block;
         height: 5px;
@@ -230,13 +346,22 @@ removes an element from a document and hides it from view.
         right: 0;
         transform: scale(0, 1);
         transition: transform ease-in-out 250ms;
+    } */
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
     }
 
-    nav a:hover::before {
-        transform: scale(1, 1);
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
     }
-/*
-    Place the navbar at the bottom of the page, and make it stick
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+    /* Place the navbar at the bottom of the page, and make it stick */
     #mobile_footer_nav {
         overflow: hidden;
         position: fixed;
@@ -244,7 +369,7 @@ removes an element from a document and hides it from view.
         width: 100%;
     }
 
-    Style the links inside the navigation bar
+    /* Style the links inside the navigation bar */
     #mobile_footer_nav a {
         position: center;
         text-decoration: none;
@@ -277,7 +402,50 @@ removes an element from a document and hides it from view.
         box-shadow: 0 4px 4px 0 rgba(200, 117, 38, 100);
         margin: 4px 2px;
         cursor: pointer;
-    }*/
+    }
+}
+
+footer {
+    background: var(--background);
+    padding: 3em 1em;
+    color:black;
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+    margin-top: 3em;
+}
+footer a {
+    color: black;
+    font-size: 1.2em;
+}
+
+.footer-nav {
+    display: flex;
+    list-style: none;
+}
+
+.footer-nav a {
+    display: inline;
+    padding: 0.75em;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    list-style: none;
+}
+
+.social-link {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.social-icon {
+    max-width: 50px;
 }
 
 

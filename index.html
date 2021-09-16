@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--This gives the browser instructions on how to control the page's dimensions and scaling.-->
+    <!--folowing is for the icone in our cart button at our navigation bar -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/hamburger.js" defer></script>
     <script src="js/javascript.js"></script>
@@ -44,7 +48,13 @@
                 <img src="img/logo.png" alt="logo Burgarastova" class="logo">
             </a>
         </div>
-        <div class="divcart"><a href="#" class="nav-logo">cart.</a></div>
+        <div class='buttons_nav_top'>
+            <a href="#" class="button_order">Order</a>
+            <button class="button_cart">
+                <span class="button_text">0.00kr</span>
+                <span class="button_icon"><ion-icon name="bag-handle-outline"></ion-icon></span>
+            </button>
+        </div>
 
     </header>
 

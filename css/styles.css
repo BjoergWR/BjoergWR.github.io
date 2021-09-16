@@ -155,8 +155,15 @@ div > img {
 }
 main > section {
     margin-top: 110px;
-    margin-bottom: 150px;
-    
+    margin-bottom: 150px; 
+}
+
+.foodimg {
+    width: 50%;
+    height: 20%;
+    left: 0;
+    right: 0;
+    margin:auto;
     
 }
 

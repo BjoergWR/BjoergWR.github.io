@@ -3,6 +3,9 @@
 :root {
     --background: rgba(245, 235, 220, 1);
     --body-background: rgba(246, 246, 246, 1);
+    --red: rgba(214, 35, 0, 1);
+    --orange: rgba(200, 117, 38, 1);
+    --broun: rgba(94,52,37,1);
 }
 
 *, *::before, *::after {
@@ -172,6 +175,49 @@ main > section {
     width: 100px;
 }
 
+/*button for cart */
+.button_cart{
+    float: left;
+    display:inline-flex;
+    height: 50px;
+    padding: 0;
+    background: rgba(245,235,220,1) ;
+    border: none;
+    border: 1.5px solid var(--red);
+    outline: none;
+    border-radius: 25px;
+    overflow: hidden;
+    font-family: "Bookman Old Style", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor:pointer;
+    color: var(--red);
+}
+.button_cart:hover{
+    background: rgba(214, 35, 0, 20);
+    color: #f7f7f7;
+}
+.button_cart:active{
+    background: var(--broun);
+    color: #f7f7f7;
+    border:none;
+}
+.button_text,
+.button_icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 24px;
+    height: 100%;
+}
+.button_icon{
+    font-size: 1.5em;
+}
+.button_nav_top{
+    position: absolute;
+    top: 10%;
+    right: 0;
+}
+
 /* nav {
     position: absolute;
     text-align: left;
@@ -247,7 +293,7 @@ removes an element from a document and hides it from view.
 
 .nav_button {
     position: center;
-    background-color: rgba(225, 135, 50, 100); /* Green */
+    background-color: rgba(225, 135, 50, 100);
     border: none;
     padding: 15px 32px;
     text-align: center;

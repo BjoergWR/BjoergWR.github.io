@@ -16,10 +16,8 @@
 
 body {
     position: relative;
-    /* margin: 0; */
     background: var(--body-background);
-    /* font-family: 'Work Sans', sans-serif;
-    font-weight: 400; */
+ 
 }
 
 li {
@@ -89,23 +87,12 @@ a {
     /* border: 1px solid blue; */
 }
 
-/* .nav-toggle:focus ~ .nav-toggle-label {
-    outline: 3px solid rgba(black, .75);
-} */
 
 .nav-item {
     margin: 1em;
 }
 
-/* .nav-toggle-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: 1em;
-    height: 100%;
-    display: flex;
-    align-items: center;
-} */
+
 
 .nav-link{
     text-transform: uppercase;
@@ -117,30 +104,6 @@ a {
     padding: 2px 2px 2px 2px
 }
 
-/* .nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    display: block;
-    background: orange;
-    height: 2px;
-    width: 2em;
-    border-radius: 2px;
-    position: relative;
-} */
-
-/* .nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    content: '';
-    position: absolute;
-}
-
-.nav-toggle-label span::before {
-    bottom: 7px;
-}
-
-.nav-toggle-label span::after {
-    top: 7px;
-} */
 
 .nav-link:hover{
     color: orange;
@@ -367,7 +330,7 @@ removes an element from a document and hides it from view.
         margin: 4px 2px;
         cursor: pointer;
     }
-}
+} /*her endar media*/
 
 footer {
     background: var(--background);

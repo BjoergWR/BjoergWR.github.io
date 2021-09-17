@@ -302,6 +302,7 @@ textarea {
  
     .hamburger {
         display: block;
+        cursor: pointer;
     }
  
     .hamburger.active .bar:nth-child(2) {

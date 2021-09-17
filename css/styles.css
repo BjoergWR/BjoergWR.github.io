@@ -17,8 +17,7 @@
 
 body {
     position: relative;
-    background: var(--body-background);
- 
+    background-image: linear-gradient(var(--body-background), var(--broun));
 }
 
 li {
@@ -40,7 +39,7 @@ a {
     width: 100%;
     top: 0;
     justify-content: space-evenly;
-    box-shadow: inset 0px -0.5px 5px black;
+    box-shadow: 0 4px 4px 0 rgba(200, 117, 38, 0.40);
     border-radius: 0% 0% 19% 19%;
 }
 
@@ -227,8 +226,9 @@ main > section {
 
 .img_text p {
     font-family: Tahoma, sans-serif;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 500;
+    color: darkslategray;
 }
 
 
@@ -289,6 +289,9 @@ removes an element from a document and hides it from view.
     cursor: pointer;
 }
 
+.order_link:hover {
+    background-color: var(--broun);
+}
 
 @media only screen and (max-width: 750px) {
   

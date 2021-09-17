@@ -17,8 +17,7 @@
 
 body {
     position: relative;
-    background: var(--body-background);
- 
+    background-image: linear-gradient(var(--body-background), var(--broun));
 }
 
 li {
@@ -40,7 +39,7 @@ a {
     width: 100%;
     top: 0;
     justify-content: space-evenly;
-    box-shadow: inset 0px -0.5px 5px black;
+    box-shadow: 0 4px 4px 0 rgba(200, 117, 38, 0.40);
     border-radius: 0% 0% 19% 19%;
 }
 
@@ -122,11 +121,14 @@ main > section {
 
 .animation .foodimg {
     display: flex;
-    width: 40%;
+
     /* height: 10%; */
     left: 0;
     right: 0;
     margin: auto;
+    max-width: 100%;
+    height: auto;
+}
 
 }
 #img1,#img2,#img3,#img4 {
@@ -188,7 +190,7 @@ main > section {
 
 .animation .foodimg {
     display: flex;
-    width: 40%;
+    width: 80%;
     /* height: 10%; */
     left: 0;
     right: 0;
@@ -196,9 +198,39 @@ main > section {
 
 }
 #img1,#img2,#img3,#img4 {
-    height: 100px;
-    width: 100px;
+    height: 500px;
+    width: auto;
 }
+
+.img_text {
+    display: table;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.img2 {
+    vertical-align: middle;
+    display: table-cell;
+}
+.img_text span {
+    vertical-align: middle;
+    display: table-cell;
+}
+.img_text h1 {
+    font-family: "Bookman Old Style", sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--broun);
+    padding: 1em 0 0 0;
+}
+
+.img_text p {
+    font-family: Tahoma, sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    color: darkslategray;
+}
+
 
 /* navbar at the bottom of the page, hiddem
 .mobile_footer_nav {
@@ -257,6 +289,9 @@ removes an element from a document and hides it from view.
     cursor: pointer;
 }
 
+.order_link:hover {
+    background-color: var(--broun);
+}
 
 @media only screen and (max-width: 750px) {
   

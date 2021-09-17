@@ -161,6 +161,7 @@ div p a img {
 
 h3 {
     word-wrap:;
+    width: 150px;
 }
 
 .container {
@@ -295,5 +296,17 @@ footer a {
     .buttons_nav_top {
         display: block;
         justify-items: left;
+    }
+
+    .container a img {
+        width: 150px;
+        height: 110px;
+    }
+    
+    div p a img {
+        width: 150px;
+        height: 110px;
+        border-radius: 20%;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
     }
  }

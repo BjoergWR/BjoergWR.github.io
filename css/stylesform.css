@@ -15,11 +15,7 @@
     box-sizing: border-box;
 }
 
-body {
-    position: relative;
-    background: var(--body-background);
- 
-}
+
 
 li {
     list-style: none;
@@ -33,7 +29,7 @@ a {
 /* navigation styles start here */
 
 .header{
-    position: fixed;
+    
     display: flex;
     background-color: var(--background);
     /* border: 1px solid blue; */
@@ -44,7 +40,7 @@ a {
     border-radius: 0% 0% 19% 19%;
 }
 
-.navbar, .divlogo, .buttons_nav_top {
+.navbar, .divlogo, .buttons_nav_top{
     /* border: 1px solid black; */
     display: flex;
     flex-basis: 100%;
@@ -53,13 +49,15 @@ a {
     padding-top: 1em;
 }
 
-/* changed this from the tutorial video to
-   allow it to gain focus, making it tabbable */
-/* .nav-toggle {
-    position: absolute !important;
-    top: -9999px !important;
-    left: -9999px !important;
-} */
+body {
+    /* position: relative; */
+    background: var(--body-background);
+    background-size: cover;
+    /* background-position: center; */
+    height: 100%;
+    opacity: 0.9;
+    margin: 0;
+}
 
 .hamburger {
     display: none;
@@ -87,7 +85,7 @@ a {
 }
 
 
-.nav-link{
+.nav-link {
     font-size: 1.1em;
     font-weight: 600;
     font-family: "Bookman Old Style", sans-serif;
@@ -95,44 +93,17 @@ a {
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
     border-radius: 10% 10% 10% 10%;
     padding: 2px 2px 2px 2px;
-
 }
 
 
 .nav-link:hover{
     color:  var(--red);
 }
+
 .nav-link:active{
     color:  var(--dart-orange);
 }
 
-.nav-logo {
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-div > img {
-    width: 100%;
-    display: block;
-    /* flex-basis: 100%; */
-}
-main > section {
-    margin-top: 110px;
-    margin-bottom: 150px; 
-}
-
-.animation .foodimg {
-    display: flex;
-    width: 40%;
-    /* height: 10%; */
-    left: 0;
-    right: 0;
-    margin: auto;
-
-}
-#img1,#img2,#img3,#img4 {
-    height: 100px;
-    width: 100px;
-}
 
 /*button for cart */
 .button_cart{
@@ -176,21 +147,23 @@ main > section {
     font-size: 1.5em;
 }
 
-div > img {
-    width: 100%;
-    display: block;
+/* div > img { */
+    /* width: 100%; */
+    /* display: block; */
     /* flex-basis: 100%; */
-}
-main > section {
+/* } */
+/* main > section {
     margin-top: 110px;
     margin-bottom: 150px; 
-}
+} */
+
+
 
 @media only screen and (max-width: 750px) {
   
 
    .header {
-       position: fixed;
+       /* position: fixed; */
    }
 
    .navbar {
@@ -222,7 +195,6 @@ main > section {
 
    .hamburger {
        display: block;
-       cursor: pointer;
    }
 
    .hamburger.active .bar:nth-child(2) {
@@ -247,66 +219,22 @@ main > section {
    }
 
    .buttons_nav_top {
-       
        display: block;
        justify-items: left;
    }
-
-
-   /* Place the navbar at the bottom of the page, and make it stick */
-   #mobile_footer_nav {
-       overflow: hidden;
-       position: fixed;
-       bottom: 0;
-       width: 100%;
-   }
-
-   /* Style the links inside the navigation bar */
-   #mobile_footer_nav a {
-       position: center;
-       text-decoration: none;
-       font-size: 17px;
-       color: #f7f7f7;
-   }
-
-   .nav_button {
-       position: center;
-       background-color: var(--dart-orange); /* Green */
-       border: none;
-       padding: 15px 32px;
-       text-align: center;
-       text-decoration: none;
-       /*display: inline-block;*/
-       font-size: 16px;
-   }
-
-   .order_link {
-       background-color: var(--red);
-       border-radius: 25px;
-       color: #f7f7f7;
-       padding: 15px 32px;
-       text-align: center;
-       text-decoration: none;
-       display: inline-block;
-       font-family: "Bookman Old Style", sans-serif;
-       font-size: 20px;
-       font-weight: bold;
-       box-shadow: 0 4px 4px 0 var(--orange);
-       margin: 4px 2px;
-       cursor: pointer;
-   }
 }
-
 
 footer {
    background: var(--background);
-   padding: 1em 1em 7em 1em;
+   /* padding: 1em 1em 1em 1em; */
    color:black;
    display: flex;
    justify-content: space-evenly;
    flex-basis: 100%;
    gap: 2em;
-   margin-top: 3em;
+   margin-top: 5em; 
+   bottom: 0;
+   box-shadow: 0px 1px 10px black;
    
    
 }
@@ -354,3 +282,58 @@ footer a {
 .social-icon {
    max-width: 50px;
 }
+
+
+main {
+  max-width: 50%;
+  display: block;
+  width: 50%; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+form {
+  box-sizing: border-box;
+  padding-top: 30px;
+  width: 70%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--background);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.966);
+  padding-bottom: 50px;
+}
+
+label {
+  width: 150px;
+  margin-right: 2em;
+}
+
+p label {
+  display: inline-block;
+  color: black;
+  text-align: right;
+}
+
+p input {
+  width: 180px;
+}
+
+p label input {
+  display: inline-block;
+  color: green;
+  border: 1px solid yellow
+}
+
+p {
+  color: rgba(253, 252, 253, 0.966);
+  text-align: center;
+  margin: 0;
+  margin-bottom: 0.75em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+

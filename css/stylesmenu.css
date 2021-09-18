@@ -49,6 +49,13 @@ body {
     align-items: center;
     padding-top: 1em;
 }
+.divlogo{
+    transition: none;
+}
+
+.divlogo a img:hover {
+    transform: none;
+}
 
 .hamburger {
     display: none;

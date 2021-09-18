@@ -8,7 +8,8 @@
     <script src="js/hamburger.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <title>Burgarastova</title>
+    <script src="js/javascript.js"></script>
+      <title>Burgarastova</title>
   </head>
   <body>
     <header class="header">
@@ -53,8 +54,9 @@
     </header>
 
     <main>
+        <div><p id="insert_submittet"></p></div>
       <div class="kontakt">
-        <form method="get" action="index.html">
+        <form id="registrationForm">
           <p>
             <label for="navn">Navn: </label>
             <input
@@ -76,32 +78,32 @@
             />
           </p>
           <p>
-            <label for="telefon">Nummar: </label>
+            <label for="phone">Nummar: </label>
             <input
               type="tel"
               name="telefon"
-              id="telefon"
+              id="phone"
               placeholder= "(+298) 505050"
               pattern = "\d{6}"
               required
             />
           </p>
           <p>
-            <label for="býur">Býur: </label>
+            <label for="city">Býur: </label>
             <input
               type="text"
               name="býur"
-              id="býur"
+              id="city"
               placeholder="Tórshavn"
               required
             />
           </p>
           <p>
-            <label for="gøta">Gøta: </label>
+            <label for="street">Gøta: </label>
             <input
               type="text"
               name="gøta"
-              id="gøta"
+              id="street"
               placeholder="Tórsgøta 100"
               required
             />
@@ -116,7 +118,7 @@
               cols="25"></textarea>
           </p>
           <p class="submit">
-            <input type="submit" name="submit" class="button1" />
+            <input type="submit" name="submit" class="button1" onclick="confirmFrom();" />
             <input type="reset" name="reset" class="button2" />
           </p>
         </form>

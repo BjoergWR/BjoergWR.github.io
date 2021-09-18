@@ -120,7 +120,6 @@ main > section {
 
 .animation .foodimg {
     display: flex;
-
     /* height: 10%; */
     left: 0;
     right: 0;
@@ -129,6 +128,12 @@ main > section {
     height: auto;
 }
 
+.animation div{
+    background-color: #f7f7f7;
+}
+.animation .img_text {
+    background-color: #fff;
+}
 
 #img1,#img2,#img3,#img4 {
     height: 100px;
@@ -207,7 +212,12 @@ main > section {
     background-color: #ffffff;
     width: 100%;
 }
-
+.img_text.last {
+    background: none;
+    background: transparent;
+    padding-top: 25px;
+    color: var(--background);
+}
 .img2 {
     vertical-align: middle;
     display: table-cell;
@@ -217,6 +227,7 @@ main > section {
     vertical-align: middle;
     display: table-cell;
 }
+
 .img_text h1 {
     font-family: "Bookman Old Style", sans-serif;
     font-size: 36px;

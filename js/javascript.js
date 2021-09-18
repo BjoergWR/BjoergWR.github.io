@@ -15,7 +15,34 @@ function addAndDisplaySum(price){
 }
 
 
-function start(){
+let person = {name:"", email:"", phone:"", city:"", street:"", comments:""};
+
+person.name = document.querySelector('#navn').value;
+person.email = document.querySelector('#email').value;
+person.phone = document.querySelector('#phone').value;
+person.city = document.querySelector('#city').value;
+person.street = document.querySelector('#street').value;
+person.comments = document.querySelector('#comments').value;
+
+
+function confirmFrom() {
+    console.log(Object.values(person));
+    var txt;
+    var confirmText = "Hi" + person.name + ". Do you want to continue"
+    var replay = confirm(confirmText);
+    if (r) {
+        txt = "You pressed OK!";
+    } else {
+        txt = "You pressed Cancel!";
+    }
+    document.getElementById("insert_submittet").innerHTML = txt;
+    }
+
+
+
+function start() {
+
+
 }
 
 

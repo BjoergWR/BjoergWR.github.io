@@ -26,9 +26,7 @@ a {
 /* navigation styles start here */
 
 body {
-    background: var(--body-background);
-    height: 100%;
-    opacity: 0.9;
+    background-image: linear-gradient(var(--body-background), var(--broun));
     margin: 0;
     
 }
@@ -160,11 +158,25 @@ div p a img {
 }
 
 h3 {
-    word-wrap:;
     width: 150px;
+    font-size: larger;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 50px;
+    padding-bottom: 1em;
+    padding-top: 1em;
 }
-
+h2 {
+    display:inline;
+    float: right;
+    padding-right: 3px;
+    padding-bottom: 0.5em;
+    padding-top:0.5em;
+    color: var(--orange);
+}
 .container {
+    font-family: "Bookman Old Style", sans-serif;
+    color: var(--broun);
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -174,7 +186,21 @@ h3 {
     align-items: center;
     gap: 2em;
 }
+.menuItem {
+    background-color: var( --background);
+    overflow: hidden;
+    border-radius: 15px;
+}
 
+a img {
+    display: block;
+    justify-content: center;
+    transition: transform .4s;   /* smoother zoom */
+}
+a img:hover {
+    transform: scale(1.10);
+    transform-origin: 50% 50%;
+}
 
 footer {
    background: var(--background);

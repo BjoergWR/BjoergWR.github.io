@@ -28,12 +28,12 @@ function confirmFrom() {
     person.comments = document.querySelector('#comments').value;
     console.log(Object.values(person));
     var txt;
-    var confirmText = "Hi " + person.name + ". Please confirm your buy"
+    var confirmText = "Hi " + person.name + ". Please confirm your buy" + "Order confirmation. Order number: 48557." + "Name: " + person.name + "Address: "
+        + person.street + ", " + person.city + "The order is ready in 40 min.";
     var replay = confirm(confirmText);
     if (r) {
         txt = "Order confirmation. Order number: 48557." + "Name: " + person.name + "Address: "
             + person.street + ", " + person.city + "The order is ready in 40 min.";
-    alert(txt);
 
     } else {
         txt = "Hi " + person.name + "you hav cancel your order";

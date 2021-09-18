@@ -48,7 +48,7 @@ a {
 }
 
 body {
-    background: var(--body-background);
+    background-image: linear-gradient(var(--body-background), var(--broun));
     height: 100%;
     opacity: 0.9;
     margin: 0;

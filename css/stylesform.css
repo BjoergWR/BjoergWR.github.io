@@ -156,10 +156,8 @@ footer {
 }
 
 footer div {
-   /* border: 1px solid red; */
    padding-top: 1em;
    text-align: center;
-   /* flex-basis: 100%; */
    
    
 }
@@ -267,6 +265,31 @@ input {
 textarea {
     width: 60%;
     height: 5em;
+  }
+
+  /* hette styling av kvittering */
+
+  main div:first-child {
+      display: flex;
+      color: violet;
+      background-color: var(--background);
+      width: 40%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 3% 3% 3% 3%;
+      box-shadow: 0 0 11px rgba(0, 0, 0, 0.6);
+  }
+
+  main div:first-child p {
+    padding: 2em;
+    color:black;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Bookman Old Style", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
   }
 
 

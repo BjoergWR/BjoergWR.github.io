@@ -143,11 +143,12 @@ body {
 
 main {
   width: 100%;
-  margin: 5em auto;
+  /* margin-top: 20em; */
+  margin: 15em auto;
   padding: 1em 0;
 }
 
-section {
+/* section {
   background-color: var(--background);
   width: 70%;
   display: flex;
@@ -162,7 +163,7 @@ section {
   font-family: "Bookman Old Style", sans-serif;
   font-size: 14px;
   font-weight: 500;
-}
+} */
 
 
 /* her endar receip */

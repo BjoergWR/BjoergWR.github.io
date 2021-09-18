@@ -31,9 +31,14 @@ function confirmFrom() {
     var confirmText = "Hi " + person.name + ". Please confirm your buy" + "Order confirmation. Order number: 48557." + "Name: " + person.name + "Address: "
         + person.street + ", " + person.city + "The order is ready in 40 min.";
     var replay = confirm(confirmText);
-    if (r) {
+    if (replay) {
+        console.log("sleppa vit her?");
+        let elem = document.getElementById('form_registration');
+        elem.parentNode.removeChild(elem);
+
         txt = "Order confirmation. Order number: 48557." + "Name: " + person.name + "Address: "
             + person.street + ", " + person.city + "The order is ready in 40 min.";
+        document.getElementById('insert_submittet').innerHTML = txt;
 
     } else {
         txt = "Hi " + person.name + "you hav cancel your order";

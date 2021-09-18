@@ -27,12 +27,12 @@ function validateForm(a, b, c, d, f) {
 
 function confirmFrom() {
     let person = {name: "", email: "", phone: "", city: "", street: "", comments: ""};
-    person.name = document.querySelector('#navn').value;
-    person.email = document.querySelector('#email').value;
-    person.phone = document.querySelector('#phone').value;
-    person.city = document.querySelector('#city').value;
-    person.street = document.querySelector('#street').value;
-    person.comments = document.querySelector('#comments').value;
+    person.name = document.getElementById('navn').value;
+    person.email = document.getElementById('email').value;
+    person.phone = document.getElementById('phone').value;
+    person.city = document.getElementById('city').value;
+    person.street = document.getElementById('street').value;
+    person.comments = document.getElementById('comments').value;
     var valdiInput = validateForm(person.name, person.email, person.phone, person.city, person.street);
     if (valdiInput) {
         var txt;

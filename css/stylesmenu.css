@@ -162,9 +162,20 @@ div p a img {
 h3 {
     word-wrap:;
     width: 150px;
+    font-size: larger;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 50px;
 }
-
+h2 {
+    display:inline;
+    float: right;
+    padding-right: 3px;
+    padding-bottom: 1em;
+}
 .container {
+    font-family: "Bookman Old Style", sans-serif;
+    color: var(--broun);
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -174,7 +185,9 @@ h3 {
     align-items: center;
     gap: 2em;
 }
-
+.menuItem {
+    background-color: var( --background);
+}
 
 footer {
    background: var(--background);

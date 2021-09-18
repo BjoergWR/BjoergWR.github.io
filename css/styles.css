@@ -135,6 +135,7 @@ main > section {
     width: 100px;
 }
 
+
 /*button for cart */
 .button_cart{
     /* float: left; */
@@ -211,6 +212,7 @@ main > section {
     vertical-align: middle;
     display: table-cell;
 }
+
 .img_text span {
     vertical-align: middle;
     display: table-cell;

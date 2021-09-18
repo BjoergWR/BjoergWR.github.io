@@ -1,5 +1,5 @@
 
-var cartSum;
+var cartSum =0;
 
 function addCart(menuItem){
     var price = document.getElementById(menuItem);
@@ -14,8 +14,9 @@ function addAndDisplaySum(price){
 
 }
 
+
 function start(){
-    cartSum = 0;
 }
+
 
 window.addEventListener("load", start);

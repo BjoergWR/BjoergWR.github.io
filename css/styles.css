@@ -129,7 +129,7 @@ main > section {
     height: auto;
 }
 
-}
+
 #img1,#img2,#img3,#img4 {
     height: 100px;
     width: 100px;
@@ -306,11 +306,11 @@ removes an element from a document and hides it from view.
     .nav-menu {
         
         position: fixed;
-        left: -100%;
-        top: 5rem;
+        left: -70%;
+        top: 6rem;
         flex-direction: column;
         background-color: var(--background);
-        width: 100%;
+        width: 70%;
         border-radius: 10px;
         text-align: center;
         transition: 0.3s;
@@ -319,10 +319,12 @@ removes an element from a document and hides it from view.
 
     .nav-menu.active {
         left: 0;
+        /* margin: 0 auto; */
     }
 
     .nav-item {
         margin: 2.5rem 0;
+        background-color: var(--background);
     }
    
 

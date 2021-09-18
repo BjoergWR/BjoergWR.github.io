@@ -186,6 +186,10 @@ table tr:last-child td:last-child {
 section > div {
    padding: 1em 1em;
 }
+
+strong {
+   font-size: 2em;
+}
 /* her endar kontakt */
 
 

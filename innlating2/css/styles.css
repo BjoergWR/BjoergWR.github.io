@@ -84,7 +84,6 @@ a {
 
 .nav-menu {
     display: flex;
-    /* border: 1px solid blue; */
 }
 
 .nav-item {
@@ -261,9 +260,6 @@ footer a {
         position: center;
     }
 }
-
-
-
 /*FOOTER END HERE*/
 
 
@@ -315,9 +311,10 @@ footer a {
     background-color: var(--broun);
 }
 
+
+
+
 /*MAIN CONTENT BEGIN HEAR*/
-
-
 *,
 *::before,
 *::after {
@@ -500,3 +497,75 @@ section {
     background-color: #fff;
 }
 /*END ANIMATION INDEX*/
+
+
+/*MENU.php */
+.middel {
+    margin-top: 5em;
+    width: 100%;
+    border: 1px solid red;
+}
+
+
+.menuImg {
+    width: 230px;
+    height: 200px;
+    display: block;
+    justify-content: center;
+    transition: transform .4s;   /* smoother zoom */
+}
+
+.menu_container {
+    font-family: "Bookman Old Style", sans-serif;
+    color: var(--broun);
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1em auto;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    border: 1px solid red;
+}
+
+.menuItem {
+    max-width: 230px;
+    background-color: var( --background);
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid crimson;
+}
+
+menuItem a:hover {
+    transform: scale(1.10);
+    transform-origin: 50% 50%;
+}
+
+.menuItem h4{
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 50px;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    color: var(--brown);
+    border: 1px solid blue;
+}
+.menuItem h2{
+    display:inline;
+    float: right;
+    padding-right: 3px;
+    padding-bottom: 0.5em;
+    padding-top:0.5em;
+    color: var(--orange);
+}
+
+@media only screen and (max-width: 750px) {
+    .menuImg {
+        width: 150px;
+        height: 110px;
+        border-radius: 20%;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    }
+}

@@ -1,5 +1,3 @@
-
-
 var arrayPrice = [];
 var count = 0;
 
@@ -7,7 +5,6 @@ function addCart(menuItem){
     var price = document.getElementById(menuItem);
     price = parseInt(price.textContent);
     arrayPrice[count++] = price;
-    console.log(arrayPrice);
     addAndDisplaySum();
 }
 
@@ -18,7 +15,6 @@ function addAndDisplaySum(){
     }
     const sumPrice = document.getElementById("sumPrice");
     sumPrice.innerHTML="" + cartSum + ".00kr";
-
 }
 
 function validateForm(a, b, c, d, f) {
@@ -32,14 +28,12 @@ function validateForm(a, b, c, d, f) {
 
 function confirmFrom() {
     let person = {name: "", email: "", phone: "", city: "", street: "", comments: ""};
-
     person.name = document.getElementById('navn').value;
     person.email = document.getElementById('email').value;
     person.phone = document.getElementById('phone').value;
     person.city = document.getElementById('city').value;
     person.street = document.getElementById('street').value;
     person.comments = document.getElementById('comments').value;
-
     var valdiInput = validateForm(person.name, person.email, person.phone, person.city, person.street);
     if (valdiInput) {
         var txt;

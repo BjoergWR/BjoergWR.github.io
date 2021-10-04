@@ -14,6 +14,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background-image: linear-gradient(var(--body-background), var(--broun));
+    margin: 0;
+}
 
 li {
     list-style: none;
@@ -24,21 +28,21 @@ a {
 }
 
 /* navigation styles start here */
-
-body {
-    background-image: linear-gradient(var(--body-background), var(--broun));
-    margin: 0;
-    
+.animation {
+    position: relative;
+    top: 0.5em;
 }
 
+
+
 .header{
-    
+
     display: flex;
     background-color: var(--background);
     width: 100%;
     top: 0;
     justify-content: space-evenly;
-    box-shadow: inset 0px -0.5px 5px black;
+    box-shadow: 0 4px 4px 0 rgba(200, 117, 38, 0.40);
     border-radius: 0% 0% 19% 19%;
 }
 
@@ -49,6 +53,7 @@ body {
     align-items: center;
     padding-top: 1em;
 }
+
 .divlogo{
     transition: none;
 }
@@ -79,7 +84,7 @@ body {
 .nav-item {
     padding: 0.2em 0.2em 0.2em 0.2em;
     margin: 0.7em;
-    background-color:rgba(240, 225, 205, 1); 
+    background-color:var(--background);
 }
 
 
@@ -88,11 +93,8 @@ body {
     font-weight: 600;
     font-family: "Bookman Old Style", sans-serif;
     color: var(--broun);
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
-    border-radius: 10% 10% 10% 10%;
     padding: 2px 2px 2px 2px;
 }
-
 
 .nav-link:hover{
     color:  var(--red);

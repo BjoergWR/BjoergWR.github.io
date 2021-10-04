@@ -35,7 +35,6 @@ a {
     position: fixed;
     display: flex;
     background-color: var(--background);
-    /* border: 1px solid blue; */
     width: 100%;
     top: 0;
     justify-content: space-evenly;
@@ -44,7 +43,6 @@ a {
 }
 
 .navbar, .divlogo, .buttons_nav_top {
-    /* border: 1px solid black; */
     display: flex;
     flex-basis: 100%;
     justify-content: space-around;
@@ -59,6 +57,13 @@ a {
     top: -9999px !important;
     left: -9999px !important;
 } */
+.divlogo{
+    transition: none;
+}
+
+.divlogo a img:hover {
+    transform: none;
+}
 
 .hamburger {
     display: none;
@@ -82,7 +87,7 @@ a {
 .nav-item {
     padding: 0.2em 0.2em 0.2em 0.2em;
     margin: 0.7em;
-    background-color:rgba(240, 225, 205, 1); 
+    background-color:var(--background);
 }
 
 
@@ -91,18 +96,17 @@ a {
     font-weight: 600;
     font-family: "Bookman Old Style", sans-serif;
     color: var(--broun);
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
-    border-radius: 10% 10% 10% 10%;
     padding: 2px 2px 2px 2px;
 }
-
-
 .nav-link:hover{
     color:  var(--red);
 }
 .nav-link:active{
     color:  var(--dart-orange);
 }
+
+
+
 
 .nav-logo {
     font-size: 1.1rem;
@@ -128,6 +132,42 @@ main > section {
     height: auto;
 }
 
+.images_amimat {
+    height: auto;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity:1;
+    }
+    45% {
+        opacity:1;
+    }
+    55% {
+        opacity:0;
+    }
+    100% {
+        opacity:0;
+    }
+}
+
+#img_1{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    animation-name: fadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-direction: alternate;
+}
+#img_0{
+    height: auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
 .animation div{
     background-color: #f7f7f7;
 }
@@ -145,7 +185,6 @@ main > section {
 .button_cart{
     /* float: left; */
     display:flex;
-
     height: 50px;
     padding: 0;
     background: rgba(245,235,220,1) ;

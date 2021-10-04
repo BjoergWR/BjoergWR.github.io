@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
+
+:root {
+    --background: rgba(245, 235, 220, 1);
+    --body-background: rgba(246, 246, 246, 1);
+    --red: rgba(214, 35, 0, 1);
+    --orange: rgba(200, 117, 38, 1);
+    --dart-orange: rgba(225, 135, 50, 100);
+    --broun: rgba(94,52,37,1);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    background-image: linear-gradient(var(--body-background), var(--broun));
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* navigation styles start here */
+
+.header{
+    position: fixed;
+    display: flex;
+    background-color: var(--background);
+    width: 100%;
+    top: 0;
+    justify-content: space-evenly;
+    box-shadow: 0 4px 10px 0 rgba(200, 117, 38, 0.30);
+    z-index: 900;
+}
+
+.navbar, .divlogo, .buttons_nav_top {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 1em;
+}
+
+/* changed this from the tutorial video to
+   allow it to gain focus, making it tabbable */
+/* .nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+} */
+.divlogo{
+    transition: none;
+}
+
+.divlogo a img:hover {
+    transform: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--broun);
+}
+
+.nav-menu {
+    display: flex;
+    /* border: 1px solid blue; */
+}
+
+.nav-item {
+    padding: 0.2em 0.2em 0.2em 0.2em;
+    margin: 0.7em;
+    background-color:var(--background);
+}
+
+
+.nav-link{
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: "Bookman Old Style", sans-serif;
+    color: var(--broun);
+    padding: 2px 2px 2px 2px;
+}
+.nav-link:hover{
+    color:  var(--red);
+}
+.nav-link:active{
+    color:  var(--dart-orange);
+}
+
+
+
+
+.nav-logo {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+div > img {
+    width: 100%;
+    display: block;
+    /* flex-basis: 100%; */
+}
+main > section {
+    margin-top: 110px;
+    margin-bottom: 150px; 
+}
+
+.animation .foodimg {
+    display: flex;
+    /* height: 10%; */
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.images_amimat {
+    height: auto;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity:1;
+    }
+    45% {
+        opacity:1;
+    }
+    55% {
+        opacity:0;
+    }
+    100% {
+        opacity:0;
+    }
+}
+
+#img_1{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    animation-name: fadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-direction: alternate;
+}
+#img_0{
+    height: auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+.animation div{
+    background-color: #f7f7f7;
+}
+.animation .img_text {
+    background-color: #fff;
+}
+
+#img1,#img2,#img3,#img4 {
+    height: 100px;
+    width: 100px;
+}
+
+
+/*button for cart */
+.button_cart{
+    /* float: left; */
+    display:flex;
+    height: 50px;
+    padding: 0;
+    background: rgba(245,235,220,1) ;
+    border: none;
+    border: 1.5px solid var(--red);
+    outline: none;
+    border-radius: 25px;
+    overflow: hidden;
+    font-family: "Bookman Old Style", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor:pointer;
+    color: var(--red);
+    margin: 1em;
+}
+
+.button_cart:hover{
+    background: var(--red);
+    color: #f7f7f7;
+}
+.button_cart:active{
+    background: var(--broun);
+    color: #f7f7f7;
+    border:none;
+}
+.button_text,
+.button_icon {
+    min-width: 40%;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+}
+.button_icon{
+    font-size: 1.5em;
+}
+
+div > img {
+    width: 100%;
+    display: block;
+    /* flex-basis: 100%; */
+}
+main > section {
+    margin-top: 110px;
+    margin-bottom: 150px; 
+}
+
+.animation .foodimg {
+    display: flex;
+    width: 80%;
+    /* height: 10%; */
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+#img1,#img2,#img3,#img4 {
+    height: 500px;
+    width: auto;
+}
+
+.img_text {
+    display: table;
+    background-color: #ffffff;
+    width: 100%;
+}
+.img_text.last {
+    background: none;
+    background: transparent;
+    padding-top: 25px;
+    color: var(--background);
+}
+.img2 {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.img_text span {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.img_text h1 {
+    font-family: "Bookman Old Style", sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--broun);
+    padding: 1em 0 0 0;
+}
+
+.img_text p {
+    font-family: Tahoma, sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    color: darkslategray;
+}
+
+
+/* navbar at the bottom of the page, hiddem
+.mobile_footer_nav {
+    display: none;
+}*/
+
+/* navbar at the bottom of the page, Display none:
+removes an element from a document and hides it from view.
+#mobile_footer_nav {
+    display: none;
+}*/
+
+/* Place the navbar at the bottom of the page, and make it stick */
+#mobile_footer_nav {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+/* Style the links inside the navigation bar */
+#mobile_footer_nav a {
+    position: center;
+    text-decoration: none;
+    font-size: 17px;
+    color: #f7f7f7;
+}
+
+
+
+.nav_button {
+    position: center;
+    background-color: var(--dart-orange);
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    /*display: inline-block;*/
+    font-size: 16px;
+}
+
+.order_link {
+    background-color: var(--red);
+    border-radius: 25px;
+    color: #f7f7f7;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Bookman Old Style", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 4px 0 var(--orange);
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.order_link:hover {
+    background-color: var(--broun);
+}
+
+@media only screen and (max-width: 750px) {
+  
+
+    .header {
+        position: fixed;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -70%;
+        top: 6rem;
+        flex-direction: column;
+        background-color: var(--background);
+        width: 70%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:  4px 4px 4px 4px rgba(200, 117, 38, 0.20);
+
+    }
+
+    .nav-menu.active {
+        left: 0;
+        /* margin: 0 auto; */
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+   
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .button_text,
+    .button_icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 6px;
+    height: 100%;
+    margin: 0px;
+    }
+
+    .buttons_nav_top {
+        
+        display: block;
+        justify-items: left;
+    }
+
+
+    /* Place the navbar at the bottom of the page, and make it stick */
+    #mobile_footer_nav {
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    /* Style the links inside the navigation bar */
+    #mobile_footer_nav a {
+        position: center;
+        text-decoration: none;
+        font-size: 17px;
+        color: #f7f7f7;
+    }
+
+    .nav_button {
+        position: center;
+        background-color: var(--dart-orange); /* Green */
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        /*display: inline-block;*/
+        font-size: 16px;
+    }
+
+    .order_link {
+        background-color: var(--red);
+        border-radius: 25px;
+        color: #f7f7f7;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-family: "Bookman Old Style", sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0 4px 4px 0 var(--orange);
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+} /*her endar media*/
+
+footer {
+    background: var(--background);
+    padding: 1em 1em 7em 1em;
+    color:black;
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 100%;
+    gap: 2em;
+    margin-top: 3em;
+    
+    
+}
+
+footer div {
+    /* border: 1px solid red; */
+    padding-top: 1em;
+    text-align: center;
+    /* flex-basis: 100%; */
+    
+    
+}
+
+footer a {
+    
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+.footer-nav li {
+    padding-bottom: 0.1em;
+    text-align: left;
+    list-style: disc;
+    
+} 
+
+.footer-nav li a {
+    padding: 1em;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+    color: var(--orange);
+}
+
+.footer-social {
+    list-style: none;
+}
+
+.social-link {
+    margin-bottom: 5px;
+}
+
+.social-icon {
+    max-width: 50px;
+}

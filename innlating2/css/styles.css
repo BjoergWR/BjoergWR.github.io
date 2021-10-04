@@ -260,6 +260,13 @@ footer a {
         position: center;
     }
 }
+
+@media only screen and (max-width: 750px) {
+    footer {
+        visibility: hidden;
+    }
+}
+
 /*FOOTER END HERE*/
 
 
@@ -504,16 +511,11 @@ section {
     margin-top: 5em;
     width: 100%;
     border: 1px solid red;
+    margin-bottom: 10em;
 }
 
 
-.menuImg {
-    width: 230px;
-    height: 200px;
-    display: block;
-    justify-content: center;
-    transition: transform .4s;   /* smoother zoom */
-}
+
 
 .menu_container {
     font-family: "Bookman Old Style", sans-serif;
@@ -536,10 +538,18 @@ section {
     border-radius: 15px;
     border: 1px solid crimson;
 }
+.menuImg {
+    width: 230px;
+    height: 200px;
+    display: block;
+    justify-content: center;
+    transition: transform .4s;   /* smoother zoom */
+}
 
-menuItem a:hover {
+.menuImg:hover {
     transform: scale(1.10);
     transform-origin: 50% 50%;
+    cursor: default;
 }
 
 .menuItem h4{
@@ -562,10 +572,10 @@ menuItem a:hover {
 }
 
 @media only screen and (max-width: 750px) {
-    .menuImg {
-        width: 150px;
-        height: 110px;
-        border-radius: 20%;
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    .menuItem h4 {
+        font-size: 0.05em;
+    }
+    .menuItem h2{
+        font-size: 0.05em;
     }
 }

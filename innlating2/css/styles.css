@@ -579,3 +579,44 @@ section {
         font-size: 0.05em;
     }
 }
+
+/*DRAW CONTENT BEGINS HERE*/
+
+.container {
+    margin: 2em 2em 2em 3em;
+}
+
+canvas {
+    cursor: pointer;
+}
+
+.tools {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    padding: 1em 1em 1em 1em;
+    margin-top: 0.5em;
+    height: 0.5em;
+    width: 100%;
+}
+
+.btn-clear {
+    width: 4em;
+    height: 2em;
+    border: 2px solid white;
+    cursor: pointer;
+    color: white;
+    background: #222;
+    font-weight: bold;
+}
+
+.color-picker {
+    width: 4em;
+    height: 2em;
+    margin: 1em 3em 1em 3em;
+}
+
+input[type="range"] {
+    width:7em;
+}

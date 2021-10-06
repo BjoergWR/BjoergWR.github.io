@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/hamburger.js" defer></script>
     <script src="js/javascript.js"></script>
+    <script src="js/main-draw.js" ></script>
     <title>Burgarastova</title>
 </head>
 

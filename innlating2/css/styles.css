@@ -25,7 +25,6 @@
 body {
     position: relative;
     background-image: linear-gradient(var(--body-background), var(--brown));
-    width: 100%;
 }
 
 li {
@@ -323,7 +322,12 @@ footer a {
 
 
 /*MAIN CONTENT BEGIN HEAR*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 
+}
 
 html{
     background: rgb(48,48,48);
@@ -380,11 +384,7 @@ img {
     text-align: center;
 }
 
-main {
-    width: 100%;
-    margin: 0 auto;
-    padding: 1em 0;
-}
+
 
 
 main,
@@ -580,11 +580,10 @@ section {
     }
 }
 
-/*CANVAS DRAW CONTENT BEGINS HERE
-THIS IS ONLY FOR THE DRAWING PAGE*/
+/*DRAW CONTENT BEGINS HERE*/
 
-.canvas-container {
-    margin: 4em 2em 0em 3em;
+.container {
+    margin: 2em 2em 2em 3em;
 }
 
 canvas {
@@ -621,5 +620,3 @@ canvas {
 input[type="range"] {
     width:7em;
 }
-
-/*CANVAS DRAW CONTENT ENDS HERE*/

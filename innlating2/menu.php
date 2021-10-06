@@ -10,17 +10,17 @@ $delete_row = false;
 
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(!empty(trim($_POST["id"]))){
-
          foreach ($_POST as $key => $entry) {
              if ($key == "current_m_chart") {
-                 $update_m_chart = $entry;
+                 $update_m_chart = trim($entry);
+                 echo "..........update m cart = " . $update_m_chart;
              }
              if ($key == "id") {
-                 $menu_id = $entry;
+                 $menu_id = trim($entry);
+                 echo "..........menu id = " . $menu_id;
              }
-         }
 
+         }
         if(isset($_POST['add'])) {
             echo "add is true";
             if($update_m_chart == 0){
@@ -39,34 +39,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             $update_m_chart-=1;
         }
-        $slq ="";
+        $sql ="";
         //prepare a select statment
         if($update_row){
-            $sql = "UPDATE `cart` SET `cartnumber`='".$update_m_chart ."' WHERE  `id`=" . $menu_id;
+            $sql = "UPDATE cart SET cartnumber='".$update_m_chart ."' WHERE  m_id=" . $menu_id;
             // UPDATE `cart` SET `id`='[value-1]',`cartnumber`='[value-2]',`m_id`='[value-3]' WHERE 1
         }
         if($delete_row){
-            $sql = "DELETE FROM `cart` WHERE `id`=" . $menu_id;
+            $sql = "DELETE FROM cart WHERE m_id=" . $menu_id;
             //DELETE FROM `cart` WHERE 0
         }
         if($create_row){
-            $sql = "INSERT INTO `cart`(`id`, `cartnumber`, `m_id`) VALUES ('null','$update_m_chart','$menu_id')";
+            $sql = "INSERT INTO cart(id, cartnumber, m_id) VALUES ('null','" .$update_m_chart. "','". $menu_id. "')";
             //INSERT INTO `cart`(`id`, `cartnumber`, `m_id`) VALUES ('[value-1]','[value-2]','[value-3]')
         }
 
         if($stmt = mysqli_prepare($link, $sql)){
-            mysqli_stmt_bind_param($stmt, "i", $param_id);
-            $param_id= trim($_POST["id"]);
             if(!mysqli_stmt_execute($stmt)){
                 echo "Oops! something went wrong. Please try again later.";
                 exit();
             }
         }
-
-    } else {
-        echo "Oops! something went wrong. Please try again later.";
-        exit();
-    }
 }
 
 
@@ -85,7 +78,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     $m_img = $row['img'];
                     $m_price = $row['price'];
 
-                    $sql = "SELECT `cartnumber` FROM `cart` WHERE `m_id`=".$m_id;
+
+                    $m_cart = "";
+
+                    $sql = "SELECT cartnumber FROM cart WHERE m_id=".$m_id;
                     $in_cart= false;
                     if($result2 = mysqli_query($link, $sql)){
                         while($row = mysqli_fetch_array($result2)) {
@@ -100,7 +96,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo "<div class='menuItem'><h4>".$m_name ."</h4><img src=" ."\"". $m_img ."\"". "alt='image of menu item' class='menuImg' onclick='addCart('menuItem1');'/>
                             <p class='p_menu'><h2> kr</h2><h2 id='menuItem1'>" . $m_price . "</h2><p class='p_item_cart'>Item in cart: " . $m_cart . "</p></p>
                          <div class='buttons'><form method='post' action='menu.php'>
-                         <input type='hidden' name='id' value='".$m_id."><input type='hidden' name='current_m_chart' value='".$m_cart."'>";
+                         <input type='hidden' name='id' value='".$m_id."'/>
+                         <input type='hidden' name='current_m_chart' value='".$m_cart."' />";
                     if($m_cart==0){
                         echo "<button name='remove' style='visibility: hidden' class='action_btn remove_button' type='submit' value='Cancel'>Remove item</button>";
                     }else {

@@ -1,66 +1,123 @@
 <?php
 $page = "menu";
 include('view/header.php');
+require_once "config.php";
+$update_m_chart="";
+$menu_id="";
+$create_row = false;
+$update_row = false;
+$delete_row = false;
+
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    if(!empty(trim($_POST["id"]))){
+
+         foreach ($_POST as $key => $entry) {
+             if ($key == "current_m_chart") {
+                 $update_m_chart = $entry;
+             }
+             if ($key == "id") {
+                 $menu_id = $entry;
+             }
+         }
+
+        if(isset($_POST['add'])) {
+            echo "add is true";
+            if($update_m_chart == 0){
+                $create_row = true;
+            }else{
+                $update_row = true;
+            }
+            $update_m_chart++;
+
+        }
+        if(isset($_POST['remove'])) {
+            if($update_m_chart == 1){
+                $delete_row = true;
+            }else{
+                $update_row = true;
+            }
+            $update_m_chart-=1;
+        }
+        $slq ="";
+        //prepare a select statment
+        if($update_row){
+            $sql = "UPDATE `cart` SET `cartnumber`='".$update_m_chart ."' WHERE  `id`=" . $menu_id;
+            // UPDATE `cart` SET `id`='[value-1]',`cartnumber`='[value-2]',`m_id`='[value-3]' WHERE 1
+        }
+        if($delete_row){
+            $sql = "DELETE FROM `cart` WHERE `id`=" . $menu_id;
+            //DELETE FROM `cart` WHERE 0
+        }
+        if($create_row){
+            $sql = "INSERT INTO `cart`(`id`, `cartnumber`, `m_id`) VALUES ('null','$update_m_chart','$menu_id')";
+            //INSERT INTO `cart`(`id`, `cartnumber`, `m_id`) VALUES ('[value-1]','[value-2]','[value-3]')
+        }
+
+        if($stmt = mysqli_prepare($link, $sql)){
+            mysqli_stmt_bind_param($stmt, "i", $param_id);
+            $param_id= trim($_POST["id"]);
+            if(!mysqli_stmt_execute($stmt)){
+                echo "Oops! something went wrong. Please try again later.";
+                exit();
+            }
+        }
+
+    } else {
+        echo "Oops! something went wrong. Please try again later.";
+        exit();
+    }
+}
+
+
 ?>
 
 <section class="middel">
     <div class="menu_container">
-        <div class="menuItem">
-            <h4>Homestyle</h4>
-            <img src="img/burger_1.jpg" alt="" class="menuImg" onclick="addCart('menuItem1');"/>
-            <p><h2> kr</h2><h2 id="menuItem1">60</h2</p>
-        </div>
-        <div class="menuItem">
-            <h4>Luger Burger</h4>
-            <img src="img/burger_3.jpg" alt="" class="menuImg" onclick="addCart('menuItem2');"/>
-            <p><h2> kr</h2><h2 id="menuItem2">75</h2></p>
-        </div>
-        <div class="menuItem">
-            <h4>Le Burger</h4>
-            <img src="img/burger.jpg" alt="" class="menuImg" onclick="addCart('menuItem3');"/>
-            <p><h2> kr</h2><h2 id="menuItem3">80</h2></p>
-        </div>
-        <div class="menuItem">
-            <h4>Chips</h4>
-            <a href="#">
-                <img src="img/french_fries.png" alt="" class="menuImg" onclick="addCart('menuItem4');" />
-            </a>
-            <p><h2> kr</h2><h2 id="menuItem4">25</h2></p>
-        </div>
-        <div class="menuItem">
-            <h4>Double Style</h4>
-            <a href="#">
-                <img src="img/burger.jpg" alt="" class="menuImg" onclick="addCart('menuItem5');"/>
-            </a>
-            <p><h2> kr</h2><h2 id="menuItem5">85</h2></p>
-        </div>
-        <div class="menuItem">
-            <h4>Hungry Beast</h4>
-            <a href="#">
-                <img src="img/tree_burger.png" alt="" class="menuImg" onclick="addCart('menuItem6');"/>
-            </a>
-            <p><h2> kr</h2><h2 id="menuItem6">150</h2></p>
-        </div>
-        <div class="menuItem">
-            <h4>Curly Chips</h4>
-            <a href="#">
-                <img src="img/frensh_fries_2.jpg" alt="" class="menuImg" onclick="addCart('menuItem7');"/>
-            </a>
-            <p><h2> kr</h2><h2 id="menuItem7">30</h2></p>
-        </div>
-        <div class="menuItem">
-            <h4>Large Soda</h4>
-            <a href="#">
-                <img src="img/soda_big.jpg" alt="" class="menuImg" onclick="addCart('menuItem8');"/>
-            </a>
-            <p><h2> kr</h2><h2 id="menuItem8">35</h2></p>
-        </div>
-        <div class="menuItem">
-            <h4>Small Soda</h4>
-            <a href="#">
-                <img src="img/coca_cola_animation_2.png" alt="" class="menuImg" onclick="addCart('menuItem9');" />
-            </a>
-            <p><h2> kr</h2><h2 id="menuItem9">25</h2></p>
+        <?php
+        // Attempt select query execution
+        $sql = "SELECT * FROM menu";
+        if($result1 = mysqli_query($link, $sql)){
+            if(mysqli_num_rows($result1) > 0){
+                while($row = mysqli_fetch_array($result1)) {
+                    $m_id = $row['id'];
+                    $m_name = $row['name'];
+                    $m_img = $row['img'];
+                    $m_price = $row['price'];
+
+                    $sql = "SELECT `cartnumber` FROM `cart` WHERE `m_id`=".$m_id;
+                    $in_cart= false;
+                    if($result2 = mysqli_query($link, $sql)){
+                        while($row = mysqli_fetch_array($result2)) {
+                            $m_cart = $row['cartnumber'];
+                            $in_cart= true;
+                        }
+                    }
+                    if(!$in_cart){
+                        $m_cart=0;
+                    }
+
+                    echo "<div class='menuItem'><h4>".$m_name ."</h4><img src=" ."\"". $m_img ."\"". "alt='image of menu item' class='menuImg' onclick='addCart('menuItem1');'/>
+                            <p class='p_menu'><h2> kr</h2><h2 id='menuItem1'>" . $m_price . "</h2><p class='p_item_cart'>Item in cart: " . $m_cart . "</p></p>
+                         <div class='buttons'><form method='post' action='menu.php'>
+                         <input type='hidden' name='id' value='".$m_id."><input type='hidden' name='current_m_chart' value='".$m_cart."'>";
+                    if($m_cart==0){
+                        echo "<button name='remove' style='visibility: hidden' class='action_btn remove_button' type='submit' value='Cancel'>Remove item</button>";
+                    }else {
+                        echo "<button name='remove' class='action_btn remove_button' type='submit' value='Cancel'>Remove item</button>";
+                    }
+                    echo "<button name='add' class='action_btn add_button' type='submit' value='Save'>Add to cart</button></form></div></div> ";
+                }
+            }
+            else{
+                echo "<p class='lead'><em>No records were found.</em></p>";
+            }
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+        }
+
+        ?>
+
         </div>
     </div>
 </section>

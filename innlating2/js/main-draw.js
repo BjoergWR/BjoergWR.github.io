@@ -1,9 +1,9 @@
-
 let start_bg_color = "white";
 let draw_color = "#349"; //start color for stroke or pen
 let draw_width = "2"; //pen width
 let is_drawing = false; //  if we are drawing or not
-let width = window.innerWidth - 100; //get the window responsive on load
+let width = window.innerWidth - 100; //get the window responsive on load and refresh
+let height = window.innerHeight - 220; // Get the size of the viewport
 let canvas;
 let ctx; //context
 
@@ -14,7 +14,7 @@ function init() {
     ctx = canvas.getContext("2d");
 
     //set the color-picker
-    draw_color=  document.querySelector('input[type="color"]');
+    draw_color = document.querySelector('input[type="color"]');
     draw_color.value = "#49E4E1";
 
     //draw the canvas board
@@ -27,23 +27,23 @@ function init() {
 
 //draw the canvas
 function drawCanvas(element) {
-    
+
     canvas.width = width; //make it resizeable
-    canvas.height = 400;
+    canvas.height = height; // adjust to the window size on refresh
     ctx.fillStyle = start_bg_color;
-    ctx.fillRect(0, 0, canvas.width , canvas.height);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 // change the color of deafualt colors, not implementet
 function change_color(element) {
-    
+
     draw_color = element.style.background;
 }
 
 
 //function for clearing the canvas and filling again
 function clear_canvas() {
-    
+
     ctx.fillStyle = start_bg_color;
     ctx.clearRect(0, 0, canvas.width, canvas.height); //we just use the function clearRect
     ctx.fillRect(0, 0, canvas.width, canvas.height); //we canvas again
@@ -51,7 +51,7 @@ function clear_canvas() {
 
 // function called from the touch and mousedown event listener
 function start_draw(event) {
-    
+
     is_drawing = true; //when we are actially drawing
     ctx.beginPath(); //begins the new path
     ctx.moveTo(event.clientX - canvas.offsetLeft,
@@ -61,7 +61,7 @@ function start_draw(event) {
 
 //function for the actual drawing
 function draw(event) {
-    
+
     if (is_drawing) {
         draw_color = document.getElementById("color-picker").value; // get the current color
         draw_width = document.getElementById("draw-width").value; // get the current width

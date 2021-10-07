@@ -9,6 +9,8 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+    <!--This inserts the jquery script only if the PAGE == Draw page-->
+    <?php if($page=='draw'){echo '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>';}?>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/hamburger.js" defer></script>
     <script src="js/javascript.js"></script>

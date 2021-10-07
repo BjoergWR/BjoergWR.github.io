@@ -24,7 +24,6 @@ function init() {
     start();
 }
 
-
 //draw the canvas
 function drawCanvas(element) {
 

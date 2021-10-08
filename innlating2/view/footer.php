@@ -1,13 +1,23 @@
 
 
-<div id="mobile_footer_nav">
-    <div class="nav_button"><a href="order.html" class="order_link">Order Now</a></div>
 
-</div>
+    <?php
+    if($page=='menu' && $total_sum==0){
+        echo " <footer class='footer'>";
+    }else{
+        echo "<div id='mobile_footer_nav'>";
+        if($total_sum==0){
 
+            echo " <div class='nav_button'><a href='menu.php' class='order_link'>Order Now</a></div>";
+        }
 
+        if($total_sum!=0){
+            echo " <div class='nav_button'><a href='registration.php' class='order_link'>Buy Now</a></div>";
+        }
+        echo "</div><footer class='footer' style='padding: 1em 1em 5em 1em;'>";
+    }
+    ?>
 
-<footer class="footer">
     <div>
         <p class="footer-nav">
             Burgara Stovan |

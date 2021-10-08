@@ -133,7 +133,7 @@ include('view/header.php');
     </div>
 </section>
 
-//include our footer
+
 <?php include('view/footer.php');?>
 
 

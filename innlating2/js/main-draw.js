@@ -3,9 +3,6 @@ let draw_color = "#349"; //start color for stroke or pen
 let draw_width = "2"; //pen width
 let is_drawing = false; //  if we are drawing or not
 
-let width; //get the window responsive on load and refresh
-let height; // Get the size of the viewport
-
 let canvas;
 let ctx; //context
 
@@ -28,17 +25,11 @@ function init() {
 //draw the canvas
 function drawCanvas(element) {
 
-    canvas.width = $( window ).width() - 100; //make it resizeable
-    canvas.height = $( window ).height() - 220; // adjust to the window size on refresh
-    ctx.fillStyle = start_bg_color;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    canvas.width = $( window ).width() - 100; //return the window width
+    canvas.height = $( window ).height() - 220; // //return the window height and adjust to the window size on refresh
+    ctx.fillStyle = start_bg_color; //assign the start color of colorpicker to the pen color
+    ctx.fillRect(0, 0, canvas.width, canvas.height); // filling the canvas
 }
-
-// change the color of deafualt colors, not implementet
-// function change_color(element) {
-//
-//     draw_color = element.style.background;
-// }
 
 
 //function for clearing the canvas and filling again
@@ -50,23 +41,24 @@ function clear_canvas() {
 }
 
 // function called from the touch and mousedown event listener
-function start_draw(event) {
+function start_draw(e) {
 
     is_drawing = true; //when we are actually drawing
     ctx.beginPath(); //begins the new path
-    ctx.moveTo(event.clientX - canvas.offsetLeft,
-        event.clientY - canvas.offsetTop); //
-    // event.preventDefault();
+    ctx.moveTo(e.pageX - canvas.offsetLeft, //using the
+        e.pageY - canvas.offsetTop); //
+    // e.preventDefault();
 }
 
 //function for the actual drawing
-function draw(event) {
+function draw(e) {
 
     if (is_drawing) {
-        draw_color = $("#color-picker").val(); // get the current color
-        draw_width = $("#draw-width").val(); // get the current width
-        ctx.lineTo(event.pageX - canvas.offsetLeft,
-            event.pageY - canvas.offsetTop);
+        draw_color = $("#color-picker").val(); // get the current stroke color
+        draw_width = $("#draw-width").val(); // get the current stroke width
+        ctx.lineTo(e.pageX - canvas.offsetLeft,
+            e.pageY - canvas.offsetTop);
+
         ctx.strokeStyle = draw_color; // setting the color of the stroke
         ctx.lineWidth = draw_width; // setting the width of the stroke or pen
         ctx.lineCap = "round"; // apperance of line ends
@@ -76,34 +68,39 @@ function draw(event) {
 }
 
 // function to stop the drawing on mouseout, touchend.....
-function stop(event) {
+function stop(e) {
     if (is_drawing) {
-        ctx.stroke();
+        ctx.stroke(); // this is the actual stroke of the pen.
         ctx.closePath(); // to close the path i.e lift the pen
         is_drawing = false; // set to not drawing
     }
-    event.preventDefault()
 }
 
 function start() {
+    /*
+    jquery event listeners for mouse down and move
+    We use bind because event handling is handeled differently in jquery
+     */
 
-    //event listeners for touch/mouuse down and move
-    // canvas.addEventListener("touchstart", start_draw, false); //for the smaller devices
-    // canvas.addEventListener("touchmove", draw, false);
-
-    canvas.addEventListener("mousedown", start_draw, false); //for mouse devices
-    canvas.addEventListener("mousemove", draw, false);
-    canvas.addEventListener("mousemove", draw, false);
-
-    //event listeners for touch/mouuse up
-    canvas.addEventListener("touchend", stop, false);
-    canvas.addEventListener("mouseup", stop, false);
-    canvas.addEventListener("mouseout", stop, false);
+    // mousedown event
+    $("#canvas").bind("mousedown",function(){
+        start_draw();
+    });
 
 
+    //mouse moving
+    $("#canvas").mousemove(draw);
+
+    // mouseUp event
+    $("#canvas").bind("mouseup", function() {
+        stop();
+    });
+
+    //clear the canvas event
     $("#clear").click(function () {
         clear_canvas();
     });
 }
+
+// this is the jquery equivalant of the javascript "load"
 $(init);
-// window.addEventListener("load", init, false);

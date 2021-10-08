@@ -1,7 +1,48 @@
 <!D<?php
 //Create our database connection
 require_once "config.php";
-include "functions.php";
+
+//global varable that is updatet when the function is called getTotalSum
+$total_sum =0;
+
+function getTotalSum($link) {
+    // Attempt select query execution
+    $sql = "SELECT * FROM menu";
+    if($result1 = mysqli_query($link, $sql)) {
+        if (mysqli_num_rows($result1) > 0) {
+            //for each row in our result we will go through the associative array
+            while ($row = mysqli_fetch_array($result1)) {
+                $m_id = $row['id'];
+                $m_price = $row['price'];
+
+                //Find how often item is added to cart.
+                $m_cart = "";
+                // Attempt select query execution to see if menu item is in the cart table
+                $sql = "SELECT cartnumber FROM cart WHERE m_id=" . $m_id;
+                $in_cart = false;
+                if ($result2 = mysqli_query($link, $sql)) {
+                    while ($row = mysqli_fetch_array($result2)) {
+                        $m_cart = $row['cartnumber'];
+                        $in_cart = true;
+                    }
+                }
+                if (!$result2) {
+
+                }
+                //if menu item not in cart then m_cart = 0;
+                if (!$in_cart) {
+                    $m_cart = 0;
+                }
+                if ($in_cart) {
+                    $GLOBALS['total_sum'] += ($m_price * $m_cart);
+                    //https://www.php.net/manual/en/language.variables.scope.php <-- access a global varable inside a function
+                }
+            }
+        }
+    }
+    return $GLOBALS['total_sum'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +78,7 @@ include "functions.php";
 
         <div>
             <ul class="nav-menu">
+                <!--here php will check what page we are currently on and add class active to the menu item-->
                 <li class="nav-item <?php if($page=='home'){echo' active';}?>"><a href="index.php" class="nav-link">Home</a></li>
                 <li class="nav-item <?php if($page=='menu'){echo' active';}?>"><a href="menu.php" class="nav-link">Menu</a></li>
                 <li class="nav-item <?php if($page=='contact'){echo' active';}?>"><a href="contact.php" class="nav-link">Contact</a></li>
@@ -53,9 +95,22 @@ include "functions.php";
 
 
     <div class='buttons_nav_top'>
-        <a href="menu.php">
+
+        <?php
+        //We check if cart is empty if so we want to direct customer to menu.php else to registration.php
+        $total_sum = getTotalSum($link);
+        if($total_sum==0){
+
+            echo "<a href='menu.php'>";
+        }
+
+        if($total_sum!=0){
+            echo "<a href='registration.php'>";
+        }
+        ?>
             <button class="button_cart">
-                <span class="button_text" id="sumPrice"><?php getTotalSum($link);?>kr</span>
+                <!--php call function to get the total sum to our cart button on top navigation-->
+                <span class="button_text" id="sumPrice"><?php echo getTotalSum($link);?>kr</span>
                 <span class="button_icon"><ion-icon name="bag-handle-outline"></ion-icon></span>
             </button>
         </a>

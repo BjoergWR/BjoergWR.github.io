@@ -567,7 +567,6 @@ section {
     color: var(--orange);
 }
 
-<<<<<<< HEAD
 .buttons {
     display: flex;
     justify-content: space-around;
@@ -584,12 +583,14 @@ section {
     font-weight: bold;
 
 }
+
 .add_button {
     color: var(--background);
     text-shadow: 0px 0px 0.20em darkgreen;
     background-color: #4ee44e;
     padding: 0.50em;
 }
+
 .remove_button {
     color: var(--brown);
     background-color: var(--background);
@@ -610,9 +611,6 @@ section {
     background-color: var(--dart-orange);
 }
 
-
-=======
->>>>>>> 2506ff3701980de10833770d3d4c1518ab9897ce
 @media only screen and (max-width: 750px) {
     .menuItem h4 {
         font-size: 0.05em;

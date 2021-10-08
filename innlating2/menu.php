@@ -15,23 +15,6 @@ $create_row = false;
 $update_row = false;
 $delete_row = false;
 
-function ifTableExists($database, $table)
-    {
-        $query = DB::select("
-            SELECT 
-                IF( EXISTS 
-                    (SELECT * FROM information_schema.COLUMNS
-                        WHERE TABLE_SCHEMA = '".$database."'
-                        AND TABLE_NAME = '".$table."'
-                        LIMIT 1),
-                1, 0)
-                AS if_exists
-        ");
-
-        return $query[0]->if_exists == 1;
-    }
-
-
 
 // if the webpage is requested with post
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -71,12 +54,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql ="";
     //prepare a select statement depending on boolean values
     if($update_row){
+        //we only want to opdate cart table in our DB
         $sql = "UPDATE cart SET cartnumber='".$update_m_chart ."' WHERE  m_id=" . $menu_id;
     }
     if($delete_row){
+        //we want to delete row in cart table in our DB
         $sql = "DELETE FROM cart WHERE m_id=" . $menu_id;
     }
     if($create_row){
+        //we want to insert new row in cart table in our DB
         $sql = "INSERT INTO cart(id, cartnumber, m_id) VALUES ('null','" .$update_m_chart. "','". $menu_id. "')";
     }
 
@@ -107,7 +93,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     //Find how often item is added to cart.
                     $m_cart = "";
-                    // Attempt select query execution
+                    // Attempt select query execution to see if menu item is in the cart table
                     $sql = "SELECT cartnumber FROM cart WHERE m_id=".$m_id;
                     $in_cart= false;
                     if($result2 = mysqli_query($link, $sql)){
@@ -116,6 +102,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                             $in_cart= true;
                         }
                     }
+                    //if menu item not in cart then m_cart = 0;
                     if(!$in_cart){
                         $m_cart=0;
                     }

@@ -27,4 +27,10 @@
 
 </footer>
 </body>
+<script>
+    //This it so prevent the "Confirm Form Resubmission" when in menu.php
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 </html>

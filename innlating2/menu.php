@@ -3,8 +3,6 @@ $page = "menu";
 
 //include our header php
 include('view/header.php');
-//Create our database connection
-require_once "config.php";
 
 //variables
 $update_m_chart="";
@@ -38,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $update_row = true;
         }
         $update_m_chart++;
-        }
+    }
 
     //If Button Remove Item was pressed
     if(isset($_POST['remove'])) {
@@ -73,6 +71,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+//include our header php
+include('view/header.php');
 ?>
 
 <section class="middel">
@@ -131,7 +131,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         ?>
-        </div>
+    </div>
     </div>
 </section>
 

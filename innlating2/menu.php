@@ -50,7 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql ="";
     //prepare a select statement depending on boolean values
     if($update_row){
-        //we only want to opdate cart table in our DB
+        //we only want to update cart table in our DB
         $sql = "UPDATE cart SET cartnumber='".$update_m_chart ."' WHERE  m_id=" . $menu_id;
     }
     if($delete_row){

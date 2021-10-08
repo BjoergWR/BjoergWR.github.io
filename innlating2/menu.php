@@ -2,7 +2,7 @@
 $page = "menu";
 
 //include our header php
-include('view/header.php');
+//include('view/header.php');
 
 //variables
 $update_m_chart="";
@@ -16,6 +16,7 @@ $delete_row = false;
 
 // if the webpage is requested with post
 if($_SERVER["REQUEST_METHOD"] == "POST") {
+    require_once "config.php";
     //fetch hidden variables from super global variable $_POST
     foreach ($_POST as $key => $entry) {
         if ($key == "current_m_chart") {
@@ -71,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
-//include our header php
+//include our header php it is placed here because we need to update the cart table in the BD before to make the cart accurate
 include('view/header.php');
 ?>
 

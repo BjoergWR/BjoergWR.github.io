@@ -1,9 +1,6 @@
 <?php
 $page = "menu";
 
-//include our header php
-//include('view/header.php');
-
 //variables
 $update_m_chart="";
 $menu_id="";

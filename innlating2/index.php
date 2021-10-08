@@ -3,7 +3,7 @@ $page = "home";
 include('view/header.php');
 ?>
 <section class="bg-white animation_section prime--container">
-    <div class="animation">
+    <div class="animation from_top">
         <div class="images_animat">
             <img src="img/adv1.jpg" alt="tree burgers" class="foodimg img_0" >
             <img src="img/adv2.jpg" alt="burger and text" class="foodimg img_1">

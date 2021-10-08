@@ -1,4 +1,4 @@
-<!D<?php
+<?php
 //Create our database connection
 require_once "config.php";
 

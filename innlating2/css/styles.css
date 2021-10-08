@@ -589,19 +589,21 @@ section {
 
 .buttons button {
     flex-grow: 1; /* this one line tells button to stretch across all available width */
-    border-radius: 15px;
+
     font-size: 0.7em;
     font-family: var(--ff-primary);
     font-weight: bold;
 
 }
 .add_button {
+    border-radius: 15px;
     color: var(--background);
     text-shadow: 0px 0px 0.20em darkgreen;
     background-color: #4ee44e;
     padding: 0.50em;
 }
 .remove_button {
+    border-radius: 15px;
     color: var(--brown);
     background-color: var(--background);
     padding: 0.50em;
@@ -683,3 +685,10 @@ input[type="range"] {
     width:7em;
 }
 /*CANVAS DRAW CONTENT ENDS HERE*/
+
+
+/*REGISTER START HERE*/
+form lable{
+    font-size: 1em;
+}
+/*REGISTER END HERE*/

@@ -1,7 +1,19 @@
+/*
+* implementation of canvas in our project.
+* Functions called more than once are generally only commented the first time.
+* We have used jquery to select and set the values,
+* of different elements in this drawing application.
+* We have used the window width to fit different window widths
+* Since jquery events are handled differently from javascript,
+* we have used jquery bindings to handel events.
+*
+* */
+
+//global variables
 let start_bg_color = "white";
-let draw_color = "#349"; //start color for stroke or pen
-let draw_width = "2"; //pen width
-let is_drawing = false; //  if we are drawing or not
+let draw_color; // start color for stroke or pen
+let draw_width = "2"; // pen width
+let is_drawing = false; // To determine if we we are currenlty drawing
 
 let canvas;
 let ctx; //context
@@ -25,7 +37,7 @@ function init() {
 //draw the canvas
 function drawCanvas(element) {
 
-    canvas.width = $( window ).width() - 100; //return the window width
+    canvas.width = $( window ).width() - 100; //return the window width using jquery selector
     canvas.height = $( window ).height() - 220; // //return the window height and adjust to the window size on refresh
     ctx.fillStyle = start_bg_color; //assign the start color of colorpicker to the pen color
     ctx.fillRect(0, 0, canvas.width, canvas.height); // filling the canvas
@@ -56,8 +68,9 @@ function draw(e) {
     if (is_drawing) {
         draw_color = $("#color-picker").val(); // get the current stroke color
         draw_width = $("#draw-width").val(); // get the current stroke width
+
         ctx.lineTo(e.pageX - canvas.offsetLeft,
-            e.pageY - canvas.offsetTop);
+                    e.pageY - canvas.offsetTop);
 
         ctx.strokeStyle = draw_color; // setting the color of the stroke
         ctx.lineWidth = draw_width; // setting the width of the stroke or pen
@@ -67,28 +80,28 @@ function draw(e) {
     }
 }
 
-// function to stop the drawing on mouseout, touchend.....
+// function to stop the drawing on mouseout
 function stop(e) {
     if (is_drawing) {
-        ctx.stroke(); // this is the actual stroke of the pen.
+        ctx.stroke();
         ctx.closePath(); // to close the path i.e lift the pen
         is_drawing = false; // set to not drawing
     }
 }
 
+/*
+* function start
+*jquery event listeners for mouse down and move
+* We use bind because event handling is handeled differently in jquery
+*/
 function start() {
-    /*
-    jquery event listeners for mouse down and move
-    We use bind because event handling is handeled differently in jquery
-     */
 
     // mousedown event
     $("#canvas").bind("mousedown",function(){
         start_draw();
     });
 
-
-    //mouse moving
+    //select canvas and on mousemove call draw function.
     $("#canvas").mousemove(draw);
 
     // mouseUp event

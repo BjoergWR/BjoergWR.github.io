@@ -110,7 +110,7 @@ function getTotalSum($link) {
         ?>
             <button class="button_cart">
                 <!--php call function to get the total sum to our cart button on top navigation-->
-                <span class="button_text" id="sumPrice"><?php echo getTotalSum($link);?>kr</span>
+                <span class="button_text" id="sumPrice"><?php echo $GLOBALS['total_sum'];?>kr</span>
                 <span class="button_icon"><ion-icon name="bag-handle-outline"></ion-icon></span>
             </button>
         </a>

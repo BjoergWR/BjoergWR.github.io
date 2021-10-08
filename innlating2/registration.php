@@ -2,7 +2,7 @@
 $page = "registration";
 include('view/header.php');
 ?>
-<section class="bg-dark prime--container">
+<section class="bg-dark prime--container last--container">
     <div class="container from_top">
         <div><p id="insert_submittet"></p></div>
         <div class="kontakt" id="form_registration">

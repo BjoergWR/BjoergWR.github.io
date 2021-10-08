@@ -97,7 +97,7 @@ a {
     font-size: 1.1em;
     font-weight: 600;
     font-family: var(--ff-primary);
-    color: var(--brown);
+
     padding: 2px 2px 2px 2px;
 }
 .nav-link:hover{
@@ -148,6 +148,8 @@ a {
 }
 /*End button for cart*/
 
+
+/*Media query for hamburger start here*/
 @media only screen and (max-width: 750px) {
     .header {
         position: fixed;
@@ -213,7 +215,6 @@ footer {
     font-size: 0.8em;
     color: var(--brown);
     text-align: center;
-
 }
 
 footer div {
@@ -266,7 +267,6 @@ footer a {
         visibility: hidden;
     }
 }
-
 /*FOOTER END HERE*/
 
 
@@ -319,15 +319,7 @@ footer a {
 }
 
 
-
-
 /*MAIN CONTENT BEGIN HEAR*/
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-
-}
 
 html{
     background: rgb(48,48,48);
@@ -385,7 +377,11 @@ img {
 }
 
 
-
+main {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em 0;
+}
 
 main,
 section {
@@ -510,8 +506,12 @@ section {
 .middel {
     margin-top: 5em;
     width: 100%;
+    border: 1px solid red;
     margin-bottom: 10em;
 }
+
+
+
 
 .menu_container {
     font-family: "Bookman Old Style", sans-serif;
@@ -524,6 +524,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 2em;
+    border: 1px solid red;
 }
 
 .menuItem {
@@ -531,19 +532,8 @@ section {
     background-color: var( --background);
     overflow: hidden;
     border-radius: 15px;
+    border: 1px solid crimson;
 }
-
-.p_menu{
-    display:inline-block;
-    text-align: center;
-}
-
-.p_item_cart{
-    font-size: 0.75em;
-    padding-left: 0.5em;
-    color: var(--brown);
-}
-
 .menuImg {
     width: 230px;
     height: 200px;
@@ -559,7 +549,6 @@ section {
 }
 
 .menuItem h4{
-    font-size: 1em;
     width: 150px;
     margin-left: auto;
     margin-right: auto;
@@ -567,15 +556,18 @@ section {
     padding-bottom: 1em;
     padding-top: 1em;
     color: var(--brown);
+    border: 1px solid blue;
 }
-
 .menuItem h2{
-    font-size:1em;
     display:inline;
     float: right;
+    padding-right: 3px;
+    padding-bottom: 0.5em;
+    padding-top:0.5em;
     color: var(--orange);
 }
 
+<<<<<<< HEAD
 .buttons {
     display: flex;
     justify-content: space-around;
@@ -619,26 +611,35 @@ section {
 }
 
 
+=======
+>>>>>>> 2506ff3701980de10833770d3d4c1518ab9897ce
 @media only screen and (max-width: 750px) {
     .menuItem h4 {
-        font-size: 1em;
+        font-size: 0.05em;
     }
     .menuItem h2{
-        font-size: 0.75em;
+        font-size: 0.05em;
     }
 }
-/*MENU CONTENT ENDS HERE*/
 
 /*DRAW CONTENT BEGINS HERE*/
 
-.container {
-    margin: 2em 2em 2em 3em;
+/*CANVAS DRAW CONTENT BEGINS HERE
+THIS IS ONLY FOR THE DRAWING PAGE
+--relies on main 386 above
+--relies on body being width 100%
+*/
+
+/* This is holds both canvas and tool boxes */
+.canvas-container {
+    margin: 4em 2em 0em 3em;
 }
 
 canvas {
     cursor: pointer;
 }
 
+/* set box layout for drawing tools */
 .tools {
     display: flex;
     flex-direction: row;
@@ -649,7 +650,7 @@ canvas {
     height: 0.5em;
     width: 100%;
 }
-
+/* styling of clear button */
 .btn-clear {
     width: 4em;
     height: 2em;
@@ -659,14 +660,14 @@ canvas {
     background: #222;
     font-weight: bold;
 }
-
+/* styling color-picker */
 .color-picker {
     width: 4em;
     height: 2em;
     margin: 1em 3em 1em 3em;
 }
-
+/*styling the width of range*/
 input[type="range"] {
     width:7em;
 }
-/*DRAW CONTENT ENDS HERE*/
+/*CANVAS DRAW CONTENT ENDS HERE*/

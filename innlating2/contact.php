@@ -54,7 +54,7 @@ include('view/header.php');
                             cols="25"></textarea>
                 </p>
                 <p class="submit">
-                    <button type="submit" name="submit" class="button-submit"/>SEND EMAIL</button>
+                    <button type="submit" name="submit" class='action_btn add_button'/>SEND EMAIL</button>
                 </p>
             </form>
         </div>

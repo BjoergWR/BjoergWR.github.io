@@ -390,14 +390,7 @@ main {
 
 main,
 section {
-    padding: 4rem 0;
-}
-
-@media (min-width: 40em) {
-    main,
-    section {
-        padding: 2rem 0;
-    }
+    padding: 2rem 0;
 }
 
 .container {
@@ -688,6 +681,9 @@ input[type="range"] {
 
 
 /*REGISTER START HERE*/
+
+
+
 /*form lable{*/
 /*    font-size: 1em;*/
 /*}*/
@@ -699,7 +695,6 @@ input[type="range"] {
 /*CONTACT BEGINS HERE*/
 
 #registrationForm {
-    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     padding: 2em 0 2em 0;

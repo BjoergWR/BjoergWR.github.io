@@ -11,7 +11,7 @@ include('view/header.php');
             <!--    The method of the of the from, specifies how data is submitted to the server.
                     end the action specifies where the form will send data-->
             <form id="registrationForm" class="contact-form" action="formContact.php" method="POST">
-                <p>
+                <p class="contact-para">
                     <label for="navn">Navn: </label>
                     <input
                             type="text"
@@ -19,7 +19,7 @@ include('view/header.php');
                             id ="navn"
                             placeholder="Firstname Lastname"/>
                 </p>
-                <p>
+                <p class="contact-para">
                     <label for="email">Email: </label>
                     <input
                             type="text"
@@ -27,7 +27,7 @@ include('view/header.php');
                             id="email"
                             placeholder="Your email"/>
                 </p>
-                <p>
+                <p class="contact-para">
                     <label for="phone">Number: </label>
                     <input
                             type="tel"
@@ -36,7 +36,7 @@ include('view/header.php');
                             placeholder= "505050"
                             pattern = "\d{6}"/>
                 </p>
-                <p>
+                <p class="contact-para">
                     <label for="navn">Subject </label>
                     <input
                             type="text"
@@ -44,7 +44,7 @@ include('view/header.php');
                             id="subject"
                             placeholder="Subject"/>
                 </p>
-                <p>
+                <p class="contact-para">
                     <label for="comments">Message</label>
                     <textarea
                             name="message"

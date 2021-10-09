@@ -5,14 +5,16 @@ include('view/header.php');
 
 
     <main id ="main_content">
-        <section class="contact bg-dark prime--container last--container from_top ">
+        <section class="contact bg-dark prime--container last--container">
 <!--        <div><p id="contact-p">SEND US AN EMAIL</p></div>-->
-        <div class="table1 " id="form_registration">
+
+        <div class="table1 from_top" id="form_registration">
             <!--    The method of the of the from, specifies how data is submitted to the server.
                     end the action specifies where the form will send data-->
             <form id="registrationForm" class="contact-form" action="formContact.php" method="POST">
+                <div><h1>We'd Loved to Hear From You</h1><br></div>
                 <p class="contact-para">
-                    <label for="navn">Navn: </label>
+                    <label for="navn">Navn: </label><br>
                     <input
                             type="text"
                             name="name"
@@ -20,7 +22,7 @@ include('view/header.php');
                             placeholder="Firstname Lastname"/>
                 </p>
                 <p class="contact-para">
-                    <label for="email">Email: </label>
+                    <label for="email">Email: </label><br>
                     <input
                             type="text"
                             name="email"
@@ -28,7 +30,7 @@ include('view/header.php');
                             placeholder="Your email"/>
                 </p>
                 <p class="contact-para">
-                    <label for="phone">Number: </label>
+                    <label for="phone">Number: </label><br>
                     <input
                             type="tel"
                             name="phone "
@@ -37,7 +39,7 @@ include('view/header.php');
                             pattern = "\d{6}"/>
                 </p>
                 <p class="contact-para">
-                    <label for="navn">Subject </label>
+                    <label for="navn">Subject </label><br>
                     <input
                             type="text"
                             name="subject"
@@ -45,7 +47,7 @@ include('view/header.php');
                             placeholder="Subject"/>
                 </p>
                 <p class="contact-para">
-                    <label for="comments">Message</label>
+                    <label for="comments">Message</label><br>
                     <textarea
                             name="message"
                             id="comments"
@@ -60,9 +62,9 @@ include('view/header.php');
         </div>
         <div class="table2">
             <table>
-                <caption>
-                    <strong>Kontakta okkum</strong>
-                </caption>
+
+                <div><h1>Contact Us</h1><br></div>
+
                 <tbody>
                 <tr>
                     <td>OPIÐ:</td>
@@ -74,11 +76,11 @@ include('view/header.php');
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td><a href="mailto:email@email.fo">Email.fo</a></td>
+                    <td><a href="mailto:email@email.fo" class="mail" target="_blank">burgarastova@mail.fo</a></td>
                 </tr>
                 <tr>
-                    <td>Stað</td>
-                    <td><a href="lokation.html">Vestarabryggja</a></td>
+                    <td>Address</td>
+                    <td>Heimagøta 82, 100 Tórshavn </td>
                 </tr>
                 </tbody>
             </table>

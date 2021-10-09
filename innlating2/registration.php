@@ -4,7 +4,7 @@ include('view/header.php');
 ?>
 
 <section class="bg-dark prime--container last--container">
-    <div class="container from_top form_reg">
+    <div class="container from_top">
         <div><h1>Checkout form</h1><br></div>
             <form action="registration.php"  method="post">
                 <label class="lable" for="fnavn">Name: </label><br>

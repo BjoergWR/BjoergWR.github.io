@@ -5,9 +5,9 @@ include('view/header.php');
 
 
     <main id ="main_content">
-        <section class="kontakt">
-        <div><p id="contact-p">CONTACT US</p></div>
-        <div class="kontakt" id="form_registration">
+        <section class="contact">
+<!--        <div><p id="contact-p">SEND US AN EMAIL</p></div>-->
+        <div class="table1" id="form_registration">
             <!--    The method of the of the from, specifies how data is submitted to the server.
                     end the action specifies where the form will send data-->
             <form id="registrationForm" class="contact-form" action="formContact.php" method="POST">
@@ -69,7 +69,7 @@ include('view/header.php');
                     <td>15.00-23.00</td>
                 </tr>
                 <tr>
-                    <td>Telefon</td>
+                    <td>Phone</td>
                     <td>505050</td>
                 </tr>
                 <tr>

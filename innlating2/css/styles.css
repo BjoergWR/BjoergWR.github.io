@@ -714,8 +714,8 @@ input[type="range"] {
 }
 
 .contact {
-    background-color: transparent;
-    width: 70%;
+    /*background-color: transparent;
+    width: 70%;*/
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;

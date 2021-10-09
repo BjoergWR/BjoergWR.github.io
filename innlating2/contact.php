@@ -5,9 +5,9 @@ include('view/header.php');
 
 
     <main id ="main_content">
-        <section class="contact">
+        <section class="contact bg-dark prime--container last--container from_top ">
 <!--        <div><p id="contact-p">SEND US AN EMAIL</p></div>-->
-        <div class="table1" id="form_registration">
+        <div class="table1 " id="form_registration">
             <!--    The method of the of the from, specifies how data is submitted to the server.
                     end the action specifies where the form will send data-->
             <form id="registrationForm" class="contact-form" action="formContact.php" method="POST">
@@ -54,7 +54,7 @@ include('view/header.php');
                             cols="25"></textarea>
                 </p>
                 <p class="submit">
-                    <button type="submit" name="submit" class='action_btn add_button'/>SEND EMAIL</button>
+                    <button type="submit" name="submit" class='action_btn add_button'/>Send Mail</button>
                 </p>
             </form>
         </div>

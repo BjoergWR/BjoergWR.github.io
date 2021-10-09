@@ -688,7 +688,22 @@ input[type="range"] {
 
 
 /*REGISTER START HERE*/
-form lable{
-    font-size: 1em;
+/*
+.input {
+    display:block;
 }
+.container form{
+    padding-top: 1em;
+    border: 1px red;
+}
+
+form .lable{
+    padding-top: 1em;
+    border: 1px red;
+}
+form .input{
+    padding-top: ;
+    border: 1px red;
+}*/
+
 /*REGISTER END HERE*/

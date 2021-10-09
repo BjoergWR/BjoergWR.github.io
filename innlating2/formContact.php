@@ -21,7 +21,7 @@ if(isset($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['subject'], $_
         $subject = $_POST['subject'];
         $message = $_POST['message'];
 
-        $To = "bjoerg.w.reinert@hotmail.com"; //Destination of the email
+        $To = "tatta@email.fo"; //Destination of the email
         $body = "";
         $body .= "From: " .$name. "\r\n";
         $body .= "Phone: " .$phone. "\r\n";

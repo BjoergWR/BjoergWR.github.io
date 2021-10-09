@@ -49,7 +49,7 @@ function clear_canvas() {
 
     ctx.fillStyle = start_bg_color;
     ctx.clearRect(0, 0, canvas.width, canvas.height); //we just use the function clearRect
-    ctx.fillRect(0, 0, canvas.width, canvas.height); //we canvas again
+    ctx.fillRect(0, 0, canvas.width, canvas.height); //we fill the canvas again
 }
 
 // function called from the touch and mousedown event listener

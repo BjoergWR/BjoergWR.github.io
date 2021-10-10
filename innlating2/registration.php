@@ -20,7 +20,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
 <section class="bg-dark prime--container last--container">
     <div class="container from_top order_form_content">
         <div>

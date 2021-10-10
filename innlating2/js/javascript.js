@@ -36,7 +36,6 @@ function confirmFrom() {
     }
 }
 
-
 function start() {
 }
 

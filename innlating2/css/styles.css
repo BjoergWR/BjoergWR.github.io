@@ -733,9 +733,9 @@ input[type="range"] {
     margin: .5em 0;
 }
 
-/*tr,td,th {*/
-/*    background-color: var(--background);*/
-/*}*/
+td {
+    padding-right: 0.5em;
+}
 td a{
     color: var(--red);
 }
@@ -745,6 +745,10 @@ strong {
 }
 label {
     color: #222222;
+}
+
+.invalid_field {
+    outline: 1px solid red;
 }
 
 
